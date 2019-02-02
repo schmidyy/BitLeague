@@ -183,7 +183,7 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         capturedImage.hero.id = "CaptureImage"
         capturedImage.image = image
         
-        let creator = CreatorViewController()
+        let creator = CreatorViewController(bitmojiURL: bitmojiURL)
         creator.reactionImage.image = image
         present(creator, animated: true, completion: nil)
     }

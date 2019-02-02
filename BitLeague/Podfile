@@ -10,4 +10,5 @@ target 'BitLeague' do
   pod 'Hero'
   pod 'Firebase/Core'
   pod 'Firebase/Storage'
+  pod 'Firebase/Firestore'
 end

@@ -9,11 +9,14 @@
 import UIKit
 import Hero
 import FirebaseStorage
+import FirebaseFirestore
 
 class CreatorViewController: UIViewController {
     let reactionImage = PanCropImage()
+    let bitmojiURL: String
     
-    init() {
+    init(bitmojiURL: String) {
+        self.bitmojiURL = bitmojiURL
         super.init(nibName: nil, bundle: nil)
         hero.isEnabled = true
         
@@ -91,12 +94,43 @@ class CreatorViewController: UIViewController {
     
     @objc func postAction() {
         guard let cropped = croppedImage(), let data = cropped.pngData() else { return }
-        let storage = Storage.storage()
-        let uuid = UUID().uuidString
-        storage.reference().child("reactions/\(uuid)").putData(data, metadata: nil) { (metadata, error) in
-            print(error)
-            print(metadata)
+        guard let user = Device.user(),
+            let userID = user.externalId,
+            let avatarURL = user.avatar,
+            let displayName = user.displayName
+        else { return }
+        let storage = Storage.storage().reference()
+        let db = Firestore.firestore()
+        let settings = db.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        db.settings = settings
+        
+        let reactionRef = storage.child("reactions/\(UUID().uuidString)")
+        reactionRef.putData(data, metadata: nil) { (metadata, error) in
+            guard error == nil else {
+                self.handlePosting(error: error!)
+                return
+            }
+            let postId = UUID().uuidString
+            db.collection("posts").document(postId).setData([
+                "bitmoji": [
+                    "image": self.bitmojiURL,
+                    "recreations": 0
+                ],
+                "claps": 0,
+                "date": Date(),
+                "image": reactionRef.fullPath,
+                "user": [
+                    "avatar": avatarURL,
+                    "displayName": displayName,
+                    "id": userID
+                ]
+            ])
         }
+    }
+    
+    func handlePosting(error: Error) {
+        present(UIAlertController(message: error.localizedDescription), animated: true)
     }
     
     func croppedImage() -> UIImage? {
@@ -104,27 +138,11 @@ class CreatorViewController: UIViewController {
         guard let cgimage = image.cgImage else { return nil }
         let container = reactionImage.bounds
         
-        let contextImage = UIImage(cgImage: cgimage)
-        let contextSize = contextImage.size
-        var posX: CGFloat = 0.0
-        var posY: CGFloat = reactionImage.offset()
-        var cgwidth: CGFloat = container.width
-        var cgheight: CGFloat = container.height
+        let posX: CGFloat = 0.0
+        let posY: CGFloat = reactionImage.offset()
+        let ratio = image.size.width / container.width
         
-        // See what size is longer and create the center off of that
-        if contextSize.width > contextSize.height {
-            posX = ((contextSize.width - contextSize.height) / 2)
-            posY = 0
-            cgwidth = contextSize.height
-            cgheight = contextSize.height
-        } else {
-            posX = 0
-            posY = ((contextSize.height - contextSize.width) / 2)
-            cgwidth = contextSize.width
-            cgheight = contextSize.width
-        }
-        
-        let rect: CGRect = CGRect(x: posX, y: posY, width: cgwidth, height: cgheight)
+        let rect: CGRect = CGRect(x: posX, y: posY, width: image.size.width, height: container.height * ratio)
         
         // Create bitmap image from context using the rect
         guard let imageRef = cgimage.cropping(to: rect) else { return nil }
