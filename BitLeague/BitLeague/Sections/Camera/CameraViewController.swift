@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Hero
 import AVFoundation
 
-class MojiCameraViewController: UIViewController {
+class CameraViewController: UIViewController {
     private let captureButton = CaptureButtonView()
     private var previewLayer = AVCaptureVideoPreviewLayer()
     private var capturedImage = UIImageView()
@@ -20,6 +21,7 @@ class MojiCameraViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
+        hero.isEnabled = true
         
         captureButton.tapSelector = captureAction
         view.addSubviewForAutoLayout(captureButton)
@@ -30,6 +32,7 @@ class MojiCameraViewController: UIViewController {
             captureButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32)
         ])
         
+        capturedImage.hero.id = "CapturedImage"
         view.addSubviewForAutoLayout(capturedImage)
         capturedImage.constrainToFill(view)
     }
@@ -46,6 +49,12 @@ class MojiCameraViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         session.startRunning()
+        capturedImage.image = nil
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        session.stopRunning()
     }
     
     private func checkAvailbility() {
@@ -112,9 +121,10 @@ class MojiCameraViewController: UIViewController {
         settings.previewPhotoFormat = previewFormat
         photoOutput.capturePhoto(with: settings, delegate: self)
     }
+    
 }
 
-extension MojiCameraViewController: AVCapturePhotoCaptureDelegate {
+extension CameraViewController: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         guard
             let orientation = photo.metadata[String(kCGImagePropertyOrientation)] as? UInt32,
@@ -124,6 +134,11 @@ extension MojiCameraViewController: AVCapturePhotoCaptureDelegate {
         
         let image = UIImage(cgImage: cgImage, scale: 1, orientation: imageOrientation)
         
+        capturedImage.hero.id = "CaptureImage"
         capturedImage.image = image
+        
+        let creator = CreatorViewController()
+        creator.reactionImage.image = image
+        present(creator, animated: true, completion: nil)
     }
 }

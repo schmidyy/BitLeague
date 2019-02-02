@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D3FF828D99C3E450A6862B2 /* Pods_BitLeague.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7216C5EF42C179A98CF18710 /* Pods_BitLeague.framework */; };
-		271F3E1922056B3A000D2320 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E1822056B3A000D2320 /* GradientView.swift */; };
 		271F3E1C2205DDED000D2320 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E1B2205DDED000D2320 /* User.swift */; };
-		271F3E1F2205DE53000D2320 /* SnapClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E1E2205DE53000D2320 /* SnapClient.swift */; };
 		271F3E222205E45F000D2320 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E212205E45F000D2320 /* FeedViewController.swift */; };
 		27EDED3E220553D90064C04B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDED3D220553D90064C04B /* LoginViewController.swift */; };
 		D930C49D22054E6E00CAF2F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C49C22054E6E00CAF2F4 /* AppDelegate.swift */; };
@@ -26,9 +24,14 @@
 		D930C4C52205506000CAF2F4 /* UIEdgeInset+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C4BA2205506000CAF2F4 /* UIEdgeInset+Extension.swift */; };
 		D930C4C62205506000CAF2F4 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C4BB2205506000CAF2F4 /* Date+Extensions.swift */; };
 		D930C4C82205506000CAF2F4 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C4BD2205506000CAF2F4 /* UITextField+Extensions.swift */; };
-		D930C4D02205537900CAF2F4 /* MojiCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C4CF2205537900CAF2F4 /* MojiCameraViewController.swift */; };
+		D930C4D02205537900CAF2F4 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C4CF2205537900CAF2F4 /* CameraViewController.swift */; };
 		D930C4D32205558F00CAF2F4 /* CaptureButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C4D22205558F00CAF2F4 /* CaptureButtonView.swift */; };
 		D930C4DB2205EDB400CAF2F4 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C4DA2205EDB400CAF2F4 /* UIImageView+Extensions.swift */; };
+		D930C4DC2205F0CE00CAF2F4 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E1822056B3A000D2320 /* GradientView.swift */; };
+		D930C4DD2205F0E500CAF2F4 /* SnapClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E1E2205DE53000D2320 /* SnapClient.swift */; };
+		D930C4DF2205F1DF00CAF2F4 /* CreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C4DE2205F1DF00CAF2F4 /* CreatorViewController.swift */; };
+		D930C4E12205FF4B00CAF2F4 /* PanCropImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C4E02205FF4B00CAF2F4 /* PanCropImageView.swift */; };
+		D930C4E32206010900CAF2F4 /* PanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C4E22206010900CAF2F4 /* PanGestureRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,9 +59,12 @@
 		D930C4BA2205506000CAF2F4 /* UIEdgeInset+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInset+Extension.swift"; sourceTree = "<group>"; };
 		D930C4BB2205506000CAF2F4 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		D930C4BD2205506000CAF2F4 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
-		D930C4CF2205537900CAF2F4 /* MojiCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MojiCameraViewController.swift; sourceTree = "<group>"; };
+		D930C4CF2205537900CAF2F4 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		D930C4D22205558F00CAF2F4 /* CaptureButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureButtonView.swift; sourceTree = "<group>"; };
 		D930C4DA2205EDB400CAF2F4 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		D930C4DE2205F1DF00CAF2F4 /* CreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorViewController.swift; sourceTree = "<group>"; };
+		D930C4E02205FF4B00CAF2F4 /* PanCropImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanCropImageView.swift; sourceTree = "<group>"; };
+		D930C4E22206010900CAF2F4 /* PanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGestureRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				B13CD7CF2C4540DC2A5D13EC60AB3D7C /* SCSDKLoginKit.framework */,
-				DCD0EE3023AF438141ABE9F43FE52627 /* SCSDKCoreKit.framework */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -86,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				271F3E1822056B3A000D2320 /* GradientView.swift */,
+				D930C4E22206010900CAF2F4 /* PanGestureRecognizer.swift */,
 			);
 			path = Subclasses;
 			sourceTree = "<group>";
@@ -222,7 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				D930C4D12205558300CAF2F4 /* Views */,
-				D930C4CF2205537900CAF2F4 /* MojiCameraViewController.swift */,
+				D930C4CF2205537900CAF2F4 /* CameraViewController.swift */,
+				D930C4DE2205F1DF00CAF2F4 /* CreatorViewController.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -231,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				D930C4D22205558F00CAF2F4 /* CaptureButtonView.swift */,
+				D930C4E02205FF4B00CAF2F4 /* PanCropImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -309,10 +317,9 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BitLeague/Pods-BitLeague-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
 				"${PODS_ROOT}/SnapSDK/SCSDKBitmojiKit.framework",
@@ -321,9 +328,8 @@
 				"${PODS_ROOT}/SnapSDK/SCSDKLoginKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKBitmojiKit.framework",
@@ -341,15 +347,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BitLeague-checkManifestLockResult.txt",
 			);
@@ -370,16 +372,21 @@
 				D930C4C42205506000CAF2F4 /* UIStackView+Extensions.swift in Sources */,
 				D930C4C62205506000CAF2F4 /* Date+Extensions.swift in Sources */,
 				D930C4D32205558F00CAF2F4 /* CaptureButtonView.swift in Sources */,
+				D930C4DC2205F0CE00CAF2F4 /* GradientView.swift in Sources */,
+				D930C4E12205FF4B00CAF2F4 /* PanCropImageView.swift in Sources */,
+				D930C4DF2205F1DF00CAF2F4 /* CreatorViewController.swift in Sources */,
 				D930C4C32205506000CAF2F4 /* NSNumber+Extensions.swift in Sources */,
 				D930C4C12205506000CAF2F4 /* UIColor+Extensions.swift in Sources */,
+				D930C4DD2205F0E500CAF2F4 /* SnapClient.swift in Sources */,
 				271F3E222205E45F000D2320 /* FeedViewController.swift in Sources */,
 				271F3E1C2205DDED000D2320 /* User.swift in Sources */,
 				D930C4C02205506000CAF2F4 /* UIView+Extensions.swift in Sources */,
 				D930C4C52205506000CAF2F4 /* UIEdgeInset+Extension.swift in Sources */,
 				D930C4DB2205EDB400CAF2F4 /* UIImageView+Extensions.swift in Sources */,
 				D930C4C22205506000CAF2F4 /* UIAlertController+Extensions.swift in Sources */,
-				D930C4D02205537900CAF2F4 /* MojiCameraViewController.swift in Sources */,
+				D930C4D02205537900CAF2F4 /* CameraViewController.swift in Sources */,
 				D930C4BE2205506000CAF2F4 /* Array+Extensions.swift in Sources */,
+				D930C4E32206010900CAF2F4 /* PanGestureRecognizer.swift in Sources */,
 				D930C49D22054E6E00CAF2F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,7 +535,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BNS58ZR5ZP;
+				DEVELOPMENT_TEAM = 2N92EHKU84;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/SnapSDK",
@@ -551,7 +558,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BNS58ZR5ZP;
+				DEVELOPMENT_TEAM = 2N92EHKU84;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/SnapSDK",

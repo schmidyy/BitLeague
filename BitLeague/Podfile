@@ -7,4 +7,5 @@ target 'BitLeague' do
 
   # Pods for BitLeague
   pod 'SnapSDK'
+  pod 'Hero'
 end
