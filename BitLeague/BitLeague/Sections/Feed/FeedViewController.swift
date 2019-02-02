@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedViewController: UIViewController {
+class FeedViewController: MojiViewController {
 
     @IBOutlet weak var feedTableView: UITableView!
     var user: User!

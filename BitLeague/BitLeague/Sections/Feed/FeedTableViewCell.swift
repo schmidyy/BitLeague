@@ -12,10 +12,17 @@ class FeedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cellContainerView: UIView!
     @IBOutlet weak var gradientView: GradientView!
+    @IBOutlet weak var bitmojiImageView: UIImageView!
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var recreateCount: UILabel!
+    @IBOutlet weak var clapCount: UILabel!
     
     func formatCell() {
         cellContainerView.layer.cornerRadius = 20
         cellContainerView.clipsToBounds = true
+        
+        
     }
 
 }

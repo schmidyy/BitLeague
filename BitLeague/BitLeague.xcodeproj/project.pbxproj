@@ -13,6 +13,9 @@
 		271F3E262205EF84000D2320 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E252205EF84000D2320 /* FeedTableViewCell.swift */; };
 		271F3E272205FE43000D2320 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E1822056B3A000D2320 /* GradientView.swift */; };
 		271F3E282205FE4D000D2320 /* SnapClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E1E2205DE53000D2320 /* SnapClient.swift */; };
+		271F3E2A2206064B000D2320 /* MojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E292206064B000D2320 /* MojiViewController.swift */; };
+		271F3E2C22060696000D2320 /* MojiControllView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 271F3E2B22060696000D2320 /* MojiControllView.xib */; };
+		271F3E2E220609DA000D2320 /* MojiControllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E2D220609DA000D2320 /* MojiControllView.swift */; };
 		27EDED3E220553D90064C04B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDED3D220553D90064C04B /* LoginViewController.swift */; };
 		D930C49D22054E6E00CAF2F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C49C22054E6E00CAF2F4 /* AppDelegate.swift */; };
 		D930C4A222054E6E00CAF2F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D930C4A022054E6E00CAF2F4 /* Main.storyboard */; };
@@ -38,6 +41,9 @@
 		271F3E1E2205DE53000D2320 /* SnapClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapClient.swift; sourceTree = "<group>"; };
 		271F3E212205E45F000D2320 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		271F3E252205EF84000D2320 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		271F3E292206064B000D2320 /* MojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MojiViewController.swift; sourceTree = "<group>"; };
+		271F3E2B22060696000D2320 /* MojiControllView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MojiControllView.xib; sourceTree = "<group>"; };
+		271F3E2D220609DA000D2320 /* MojiControllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MojiControllView.swift; sourceTree = "<group>"; };
 		27EDED3D220553D90064C04B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7216C5EF42C179A98CF18710 /* Pods_BitLeague.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitLeague.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D702DD2D73EDCD7935E2CDC /* Pods-BitLeague.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitLeague.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitLeague/Pods-BitLeague.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				271F3E1822056B3A000D2320 /* GradientView.swift */,
+				271F3E292206064B000D2320 /* MojiViewController.swift */,
+				271F3E2B22060696000D2320 /* MojiControllView.xib */,
+				271F3E2D220609DA000D2320 /* MojiControllView.swift */,
 			);
 			path = Subclasses;
 			sourceTree = "<group>";
@@ -297,6 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271F3E2C22060696000D2320 /* MojiControllView.xib in Resources */,
 				D930C4A722054E7000CAF2F4 /* LaunchScreen.storyboard in Resources */,
 				D930C4A422054E7000CAF2F4 /* Assets.xcassets in Resources */,
 				D930C4A222054E6E00CAF2F4 /* Main.storyboard in Resources */,
@@ -375,7 +385,9 @@
 				D930C4C62205506000CAF2F4 /* Date+Extensions.swift in Sources */,
 				D930C4D32205558F00CAF2F4 /* CaptureButtonView.swift in Sources */,
 				D930C4C32205506000CAF2F4 /* NSNumber+Extensions.swift in Sources */,
+				271F3E2E220609DA000D2320 /* MojiControllView.swift in Sources */,
 				D930C4C12205506000CAF2F4 /* UIColor+Extensions.swift in Sources */,
+				271F3E2A2206064B000D2320 /* MojiViewController.swift in Sources */,
 				271F3E272205FE43000D2320 /* GradientView.swift in Sources */,
 				271F3E222205E45F000D2320 /* FeedViewController.swift in Sources */,
 				271F3E1C2205DDED000D2320 /* User.swift in Sources */,

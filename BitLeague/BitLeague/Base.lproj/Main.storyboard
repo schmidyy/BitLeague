@@ -207,7 +207,7 @@
                                     <constraint firstAttribute="trailing" secondItem="1OQ-Jc-HyH" secondAttribute="trailing" constant="14" id="x6B-ct-hPx"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n1g-hY-1kX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n1g-hY-1kX">
                                 <rect key="frame" x="0.0" y="94" width="375" height="718"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -346,8 +346,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="avatarImageView" destination="6yh-K1-AX1" id="P5m-Hz-qL5"/>
+                                            <outlet property="bitmojiImageView" destination="1Wr-Wo-UBg" id="y60-Mj-yL2"/>
                                             <outlet property="cellContainerView" destination="BnV-QY-Gee" id="lV8-nI-QoY"/>
+                                            <outlet property="clapCount" destination="IxX-nz-qq6" id="P9S-4j-1UT"/>
                                             <outlet property="gradientView" destination="nrU-uV-sjq" id="oVS-F0-6C6"/>
+                                            <outlet property="nameLabel" destination="Z0j-kE-I1V" id="APL-y5-CvU"/>
+                                            <outlet property="recreateCount" destination="xgD-4P-fYh" id="dSp-14-CVb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
