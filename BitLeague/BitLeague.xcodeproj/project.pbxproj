@@ -22,6 +22,7 @@
 		D930C4C52205506000CAF2F4 /* UIEdgeInset+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C4BA2205506000CAF2F4 /* UIEdgeInset+Extension.swift */; };
 		D930C4C62205506000CAF2F4 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C4BB2205506000CAF2F4 /* Date+Extensions.swift */; };
 		D930C4C82205506000CAF2F4 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C4BD2205506000CAF2F4 /* UITextField+Extensions.swift */; };
+		D930C4D02205537900CAF2F4 /* MojiCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C4CF2205537900CAF2F4 /* MojiCreatorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		D930C4BA2205506000CAF2F4 /* UIEdgeInset+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInset+Extension.swift"; sourceTree = "<group>"; };
 		D930C4BB2205506000CAF2F4 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		D930C4BD2205506000CAF2F4 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		D930C4CF2205537900CAF2F4 /* MojiCreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MojiCreatorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				D930C4B12205504300CAF2F4 /* Foundation */,
-				D930C4C92205507900CAF2F4 /* Sections */,
+				D930C4CD2205536200CAF2F4 /* Sections */,
 				D930C49C22054E6E00CAF2F4 /* AppDelegate.swift */,
 				D930C49E22054E6E00CAF2F4 /* ViewController.swift */,
 				D930C4A022054E6E00CAF2F4 /* Main.storyboard */,
@@ -111,17 +113,18 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		D930C4C92205507900CAF2F4 /* Sections */ = {
+		D930C4CD2205536200CAF2F4 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
-				D930C4CA2205511500CAF2F4 /* Camera */,
+				D930C4CE2205536900CAF2F4 /* Camera */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
 		};
-		D930C4CA2205511500CAF2F4 /* Camera */ = {
+		D930C4CE2205536900CAF2F4 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				D930C4CF2205537900CAF2F4 /* MojiCreatorViewController.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				D930C4C02205506000CAF2F4 /* UIView+Extensions.swift in Sources */,
 				D930C4C52205506000CAF2F4 /* UIEdgeInset+Extension.swift in Sources */,
 				D930C4C22205506000CAF2F4 /* UIAlertController+Extensions.swift in Sources */,
+				D930C4D02205537900CAF2F4 /* MojiCreatorViewController.swift in Sources */,
 				D930C4BE2205506000CAF2F4 /* Array+Extensions.swift in Sources */,
 				D930C49D22054E6E00CAF2F4 /* AppDelegate.swift in Sources */,
 			);
