@@ -31,7 +31,7 @@ class MojiViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             mojiControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            mojiControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
+            mojiControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -42),
             mojiControl.widthAnchor.constraint(equalToConstant: 228),
             mojiControl.heightAnchor.constraint(equalToConstant: 68)
         ])

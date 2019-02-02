@@ -8,6 +8,7 @@
 
 import UIKit
 import Hero
+import FirebaseStorage
 
 class CreatorViewController: UIViewController {
     let reactionImage = PanCropImage()
@@ -72,6 +73,7 @@ class CreatorViewController: UIViewController {
         
         let postButton = UIButton()
         postButton.setImage(UIImage(named: "postButton"), for: .normal)
+        postButton.addTarget(self, action: #selector(postAction), for: .touchUpInside)
         view.addSubviewForAutoLayout(postButton)
         postButton.constrainToFillHorizontally(view, againstLayoutMargins: true)
         NSLayoutConstraint.activate([
@@ -85,5 +87,48 @@ class CreatorViewController: UIViewController {
     
     @objc func retryAction() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func postAction() {
+        guard let cropped = croppedImage(), let data = cropped.pngData() else { return }
+        let storage = Storage.storage()
+        let uuid = UUID().uuidString
+        storage.reference().child("reactions/\(uuid)").putData(data, metadata: nil) { (metadata, error) in
+            print(error)
+            print(metadata)
+        }
+    }
+    
+    func croppedImage() -> UIImage? {
+        guard let image = reactionImage.image else { return nil }
+        guard let cgimage = image.cgImage else { return nil }
+        let container = reactionImage.bounds
+        
+        let contextImage = UIImage(cgImage: cgimage)
+        let contextSize = contextImage.size
+        var posX: CGFloat = 0.0
+        var posY: CGFloat = reactionImage.offset()
+        var cgwidth: CGFloat = container.width
+        var cgheight: CGFloat = container.height
+        
+        // See what size is longer and create the center off of that
+        if contextSize.width > contextSize.height {
+            posX = ((contextSize.width - contextSize.height) / 2)
+            posY = 0
+            cgwidth = contextSize.height
+            cgheight = contextSize.height
+        } else {
+            posX = 0
+            posY = ((contextSize.height - contextSize.width) / 2)
+            cgwidth = contextSize.width
+            cgheight = contextSize.width
+        }
+        
+        let rect: CGRect = CGRect(x: posX, y: posY, width: cgwidth, height: cgheight)
+        
+        // Create bitmap image from context using the rect
+        guard let imageRef = cgimage.cropping(to: rect) else { return nil }
+        
+        return UIImage(cgImage: imageRef, scale: image.scale, orientation: image.imageOrientation)
     }
 }

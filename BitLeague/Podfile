@@ -9,5 +9,5 @@ target 'BitLeague' do
   pod 'SnapSDK'
   pod 'Hero'
   pod 'Firebase/Core'
-
+  pod 'Firebase/Storage'
 end

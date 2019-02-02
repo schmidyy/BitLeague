@@ -77,5 +77,7 @@ class PanCropImage: UIView {
         layoutIfNeeded()
     }
     
-    
+    func offset() -> CGFloat {
+        return offsetConstraint?.constant ?? 0
+    }
 }
