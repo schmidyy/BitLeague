@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>36291191713-kdoam44v35c0k8jnn9ol4lve6skvskpn.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.36291191713-kdoam44v35c0k8jnn9ol4lve6skvskpn</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC8buRDyUaHHTwnHyE9jUSg9Ij8HZsx7Hk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>36291191713</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.kirkbyo.BitLeague</string>
+	<key>PROJECT_ID</key>
+	<string>bitleague-d4c12</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bitleague-d4c12.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:36291191713:ios:7ce80ea3a6a8b2e0</string>
+	<key>DATABASE_URL</key>
+	<string>https://bitleague-d4c12.firebaseio.com</string>
+</dict>
+</plist>

@@ -18,6 +18,7 @@ class FeedViewController: MojiViewController {
 
         feedTableView.delegate = self
         feedTableView.dataSource = self
+        selectedControl = .feed
     }
 
 }
