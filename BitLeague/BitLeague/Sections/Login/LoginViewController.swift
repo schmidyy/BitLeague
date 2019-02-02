@@ -16,6 +16,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
+        fetchUserData()
     }
     
     private func setupUI() {
@@ -24,21 +26,36 @@ class LoginViewController: UIViewController {
         view.sendSubviewToBack(gradientView)
     }
     
+    private func fetchUserData() {
+        SnapClient.fetchUserData({ [weak self] (user, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            guard let user = user else { return }
+            print(user.displayName!)
+            print(user.avatar!)
+            
+            DispatchQueue.main.async {
+                self?.presentFeed(user)
+            }
+        })
+    }
+    
+    private func presentFeed(_ user: User) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let feedViewController = storyboard.instantiateViewController(withIdentifier: "feed") as! FeedViewController
+        feedViewController.user = user
+        present(feedViewController, animated: true)
+    }
+    
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        SCSDKLoginClient.login(from: self) { success, error in
+        SCSDKLoginClient.login(from: self) { [weak self] success, error in
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
             
-            SnapClient.fetchUserData({ (user, error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                }
-                guard let user = user else { return }
-                print(user.displayName!)
-                print(user.avatar!)
-            })
+            self?.fetchUserData()
         }
     }
 }
