@@ -14,6 +14,7 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var gradientView: GradientView!
     @IBOutlet weak var bitmojiImageView: UIImageView!
     @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var reactImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var recreateCount: UILabel!
     @IBOutlet weak var clapCount: UILabel!
@@ -22,5 +23,21 @@ class FeedTableViewCell: UITableViewCell {
         cellContainerView.layer.cornerRadius = 20
         cellContainerView.clipsToBounds = true
     }
-
+    
+    func formatCell(_ post: Post) {
+        formatCell()
+        nameLabel.text = post.user.displayName
+        clapCount.text = "\(post.claps)"
+        recreateCount.text = "\(post.bitmoji.reactions)"
+        
+        DispatchQueue.main.async {
+            if let bitmojiImage = UIImage.load(from: post.bitmoji.image),
+                let avatarImage = UIImage.load(from: post.user.avatar!),
+                let reactImage = UIImage.load(from: post.image) {
+                self.bitmojiImageView.image = bitmojiImage
+                self.avatarImageView.image = avatarImage
+                self.reactImage.image = reactImage
+            }
+        }
+    }
 }

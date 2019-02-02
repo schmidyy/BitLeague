@@ -36,6 +36,8 @@ class LoginViewController: UIViewController {
             print(user.avatar!)
             print(user.externalId!)
             
+            Device.setUser(user)
+            
             DispatchQueue.main.async {
                 self?.presentFeed(user)
             }
@@ -47,6 +49,7 @@ class LoginViewController: UIViewController {
         let feedViewController = storyboard.instantiateViewController(withIdentifier: "feed") as! FeedViewController
         feedViewController.user = user
         present(feedViewController, animated: true)
+//        present(CameraViewController(), animated: true, completion: nil)
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {

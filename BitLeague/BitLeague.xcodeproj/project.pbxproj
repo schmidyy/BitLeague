@@ -18,6 +18,7 @@
 		271F3E2E220609DA000D2320 /* MojiControllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E2D220609DA000D2320 /* MojiControllView.swift */; };
 		271F3E30220618E2000D2320 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 271F3E2F220618E2000D2320 /* GoogleService-Info.plist */; };
 		271F3E322206357C000D2320 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E312206357C000D2320 /* Device.swift */; };
+		271F3E3422063FCD000D2320 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E3322063FCD000D2320 /* Post.swift */; };
 		27EDED3E220553D90064C04B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDED3D220553D90064C04B /* LoginViewController.swift */; };
 		D930C49D22054E6E00CAF2F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C49C22054E6E00CAF2F4 /* AppDelegate.swift */; };
 		D930C4A222054E6E00CAF2F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D930C4A022054E6E00CAF2F4 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		271F3E2D220609DA000D2320 /* MojiControllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MojiControllView.swift; sourceTree = "<group>"; };
 		271F3E2F220618E2000D2320 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		271F3E312206357C000D2320 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		271F3E3322063FCD000D2320 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		27EDED3D220553D90064C04B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7216C5EF42C179A98CF18710 /* Pods_BitLeague.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitLeague.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D702DD2D73EDCD7935E2CDC /* Pods-BitLeague.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitLeague.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitLeague/Pods-BitLeague.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				271F3E1B2205DDED000D2320 /* User.swift */,
+				271F3E3322063FCD000D2320 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				271F3E272205FE43000D2320 /* GradientView.swift in Sources */,
 				271F3E222205E45F000D2320 /* FeedViewController.swift in Sources */,
 				271F3E1C2205DDED000D2320 /* User.swift in Sources */,
+				271F3E3422063FCD000D2320 /* Post.swift in Sources */,
 				D930C4C02205506000CAF2F4 /* UIView+Extensions.swift in Sources */,
 				D930C4C52205506000CAF2F4 /* UIEdgeInset+Extension.swift in Sources */,
 				D930C4DB2205EDB400CAF2F4 /* UIImageView+Extensions.swift in Sources */,
