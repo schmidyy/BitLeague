@@ -34,6 +34,7 @@ class LoginViewController: UIViewController {
             guard let user = user else { return }
             print(user.displayName!)
             print(user.avatar!)
+            print(user.externalId!)
             
             DispatchQueue.main.async {
                 self?.presentFeed(user)

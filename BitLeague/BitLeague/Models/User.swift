@@ -11,6 +11,7 @@ import Foundation
 struct User {
     let displayName: String?
     let avatar: String?
+    let externalId: String?
     
     private enum CodingKeys: String, CodingKey {
         case data
@@ -21,6 +22,7 @@ struct User {
     }
     
     private enum MeKeys: String, CodingKey {
+        case externalId
         case displayName
         case bitmoji
     }
@@ -37,6 +39,7 @@ extension User: Decodable {
         let me = try data.nestedContainer(keyedBy: MeKeys.self, forKey: .me)
         
         displayName = try? me.decode(String.self, forKey: .displayName)
+        externalId = try? me.decode(String.self, forKey: .externalId)
         
         let bitmoji = try me.nestedContainer(keyedBy: BitmojiKeys.self, forKey: .bitmoji)
         avatar = try? bitmoji.decode(String.self, forKey: .avatar)

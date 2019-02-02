@@ -64,6 +64,4 @@ extension MojiViewController: SCSDKBitmojiStickerPickerViewControllerDelegate {
         print(bitmojiURL)
         dismiss(animated: true)
     }
-    
-    
 }

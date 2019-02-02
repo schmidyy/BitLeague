@@ -36,6 +36,9 @@ class MojiControllView: UIView {
         wideView.layer.cornerRadius = 20
         addView.layer.cornerRadius = addView.frame.height / 2
         
+        wideView.dropShadow()
+        addView.dropShadow()
+        
         switch selectedControl! {
         case .feed:
             feedButton.imageView?.image = UIImage(named: "feed_controll_selected")

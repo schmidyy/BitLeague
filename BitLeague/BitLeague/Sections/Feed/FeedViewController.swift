@@ -10,6 +10,7 @@ import UIKit
 
 class FeedViewController: MojiViewController {
 
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var feedTableView: UITableView!
     var user: User!
     
@@ -20,7 +21,6 @@ class FeedViewController: MojiViewController {
         feedTableView.dataSource = self
         selectedControl = .feed
     }
-
 }
 
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {

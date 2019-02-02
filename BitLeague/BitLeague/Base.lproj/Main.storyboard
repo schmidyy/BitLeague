@@ -98,6 +98,7 @@
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="lWw-YD-9gM">
                                                 <rect key="frame" x="0.0" y="129" width="229" height="58"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recreating Bitmojis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Pg-cc-bIK">
                                                 <rect key="frame" x="25.333333333333329" y="197" width="178.66666666666669" height="22"/>
@@ -199,11 +200,21 @@
                                             <constraint firstAttribute="height" constant="38" id="G97-fj-6J0"/>
                                         </constraints>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_filled" translatesAutoresizingMaskIntoConstraints="NO" id="csI-8Q-Npl">
+                                        <rect key="frame" x="107" y="53" width="161" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="Rf6-xU-OUM"/>
+                                            <constraint firstAttribute="width" constant="161" id="y0a-RN-DI4"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="csI-8Q-Npl" firstAttribute="centerY" secondItem="1OQ-Jc-HyH" secondAttribute="centerY" id="687-30-XjS"/>
                                     <constraint firstAttribute="height" constant="94" id="cSf-a8-swF"/>
                                     <constraint firstAttribute="bottom" secondItem="1OQ-Jc-HyH" secondAttribute="bottom" constant="6" id="srV-cz-kf5"/>
+                                    <constraint firstItem="csI-8Q-Npl" firstAttribute="centerX" secondItem="7Wb-ai-qYa" secondAttribute="centerX" id="uKK-I8-J4O"/>
                                     <constraint firstAttribute="trailing" secondItem="1OQ-Jc-HyH" secondAttribute="trailing" constant="14" id="x6B-ct-hPx"/>
                                 </constraints>
                             </view>
@@ -219,13 +230,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BnV-QY-Gee">
-                                                    <rect key="frame" x="27" y="19" width="321" height="242"/>
+                                                    <rect key="frame" x="15" y="19" width="345" height="242"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="template_image" translatesAutoresizingMaskIntoConstraints="NO" id="JGH-gH-XQF">
-                                                            <rect key="frame" x="0.0" y="0.0" width="321" height="242"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="345" height="242"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nrU-uV-sjq" customClass="GradientView" customModule="BitLeague" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="321" height="242"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="345" height="242"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
@@ -259,14 +270,14 @@
                                                             </constraints>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="template_bitmoji" translatesAutoresizingMaskIntoConstraints="NO" id="1Wr-Wo-UBg">
-                                                            <rect key="frame" x="211" y="10" width="100" height="120"/>
+                                                            <rect key="frame" x="235" y="10" width="100" height="120"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="Sc1-PB-7e4"/>
                                                                 <constraint firstAttribute="height" constant="120" id="SfJ-vd-lJd"/>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wTk-dL-XST">
-                                                            <rect key="frame" x="271" y="191.33333333333334" width="25" height="43.666666666666657"/>
+                                                            <rect key="frame" x="295" y="191.33333333333334" width="25" height="43.666666666666657"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clap_silhoute" translatesAutoresizingMaskIntoConstraints="NO" id="9sf-96-jgA">
                                                                     <rect key="frame" x="0.0" y="0.0" width="25" height="27.666666666666668"/>
@@ -287,7 +298,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="A5v-SA-rZC">
-                                                            <rect key="frame" x="218" y="191.33333333333334" width="25" height="43.666666666666657"/>
+                                                            <rect key="frame" x="242" y="191.33333333333334" width="25" height="43.666666666666657"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trophy_silhoute" translatesAutoresizingMaskIntoConstraints="NO" id="e0q-8t-oge">
                                                                     <rect key="frame" x="0.0" y="0.0" width="25" height="27.666666666666668"/>
@@ -308,7 +319,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mat Schmid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0j-kE-I1V">
-                                                            <rect key="frame" x="52" y="203.66666666666666" width="158" height="17"/>
+                                                            <rect key="frame" x="52" y="203.66666666666666" width="182" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -340,9 +351,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="BnV-QY-Gee" firstAttribute="top" secondItem="ba3-2A-IeG" secondAttribute="topMargin" constant="8" id="5tb-JO-7FE"/>
-                                                <constraint firstItem="BnV-QY-Gee" firstAttribute="leading" secondItem="ba3-2A-IeG" secondAttribute="leadingMargin" constant="12" id="97U-Vf-PLL"/>
+                                                <constraint firstItem="BnV-QY-Gee" firstAttribute="leading" secondItem="ba3-2A-IeG" secondAttribute="leadingMargin" id="97U-Vf-PLL"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="BnV-QY-Gee" secondAttribute="bottom" constant="8" id="kfh-za-hbf"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="BnV-QY-Gee" secondAttribute="trailing" constant="12" id="t2e-aq-9Q0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="BnV-QY-Gee" secondAttribute="trailing" id="t2e-aq-9Q0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -359,6 +370,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="BFH-yg-4lV" firstAttribute="trailing" secondItem="7Wb-ai-qYa" secondAttribute="trailing" id="BkH-GL-c3Q"/>
                             <constraint firstItem="BFH-yg-4lV" firstAttribute="trailing" secondItem="n1g-hY-1kX" secondAttribute="trailing" id="Blh-u7-6ZV"/>
@@ -372,6 +384,7 @@
                     </view>
                     <connections>
                         <outlet property="feedTableView" destination="n1g-hY-1kX" id="GNK-6P-GoH"/>
+                        <outlet property="headerView" destination="7Wb-ai-qYa" id="f5g-ld-noP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nu-FJ-xis" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -382,6 +395,7 @@
     <resources>
         <image name="clap_silhoute" width="28" height="28"/>
         <image name="header" width="229" height="58"/>
+        <image name="header_filled" width="441" height="111"/>
         <image name="login_button" width="345" height="80"/>
         <image name="sparkle_1" width="108" height="90"/>
         <image name="sparkle_2" width="34" height="34"/>
