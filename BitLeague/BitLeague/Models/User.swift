@@ -30,6 +30,12 @@ struct User {
     private enum BitmojiKeys: String, CodingKey {
         case avatar
     }
+    
+    init(id: String, name: String, avatar: String) {
+        self.externalId = id
+        self.displayName = name
+        self.avatar = avatar
+    }
 }
 
 extension User: Decodable {

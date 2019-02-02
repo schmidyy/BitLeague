@@ -282,7 +282,7 @@
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clap_silhoute" translatesAutoresizingMaskIntoConstraints="NO" id="9sf-96-jgA">
                                                                     <rect key="frame" x="0.0" y="0.0" width="25" height="27.666666666666668"/>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="625" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IxX-nz-qq6">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="625" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IxX-nz-qq6">
                                                                     <rect key="frame" x="0.0" y="27.666666666666657" width="25" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="caQ-Pp-3Us"/>
@@ -303,7 +303,7 @@
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trophy_silhoute" translatesAutoresizingMaskIntoConstraints="NO" id="e0q-8t-oge">
                                                                     <rect key="frame" x="0.0" y="0.0" width="25" height="27.666666666666668"/>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgD-4P-fYh">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgD-4P-fYh">
                                                                     <rect key="frame" x="0.0" y="27.666666666666657" width="25" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="9VL-OH-U6g"/>
@@ -363,6 +363,7 @@
                                             <outlet property="clapCount" destination="IxX-nz-qq6" id="P9S-4j-1UT"/>
                                             <outlet property="gradientView" destination="nrU-uV-sjq" id="oVS-F0-6C6"/>
                                             <outlet property="nameLabel" destination="Z0j-kE-I1V" id="APL-y5-CvU"/>
+                                            <outlet property="reactImage" destination="JGH-gH-XQF" id="o2p-4x-YAQ"/>
                                             <outlet property="recreateCount" destination="xgD-4P-fYh" id="dSp-14-CVb"/>
                                         </connections>
                                     </tableViewCell>
