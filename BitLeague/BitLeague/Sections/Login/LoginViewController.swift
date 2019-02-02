@@ -45,8 +45,7 @@ class LoginViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let feedViewController = storyboard.instantiateViewController(withIdentifier: "feed") as! FeedViewController
         feedViewController.user = user
-        //present(feedViewController, animated: true)
-        present(CameraViewController(), animated: true, completion: nil)
+        present(feedViewController, animated: true)
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {

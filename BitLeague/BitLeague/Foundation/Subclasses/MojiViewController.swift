@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SCSDKBitmojiKit
 
 class MojiViewController: UIViewController {
     
@@ -49,21 +48,9 @@ extension MojiViewController: MojiControlProtocol {
             let feedViewController = storyboard.instantiateViewController(withIdentifier: "feed") as! FeedViewController
             present(feedViewController, animated: true)
         case .add:
-            let stickerPickerVC = SCSDKBitmojiStickerPickerViewController()
-            stickerPickerVC.delegate = self
-            let navigationController = UINavigationController(rootViewController: stickerPickerVC)
-            present(navigationController, animated: true)
+            present(BitmojiSelectorViewController(), animated: true)
         default:
             break
         }
     }
-}
-
-extension MojiViewController: SCSDKBitmojiStickerPickerViewControllerDelegate {
-    func bitmojiStickerPickerViewController(_ stickerPickerViewController: SCSDKBitmojiStickerPickerViewController, didSelectBitmojiWithURL bitmojiURL: String, image: UIImage?) {
-        print(bitmojiURL)
-        dismiss(animated: true)
-    }
-    
-    
 }

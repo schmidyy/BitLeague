@@ -25,14 +25,14 @@ extension UIView {
         if againstLayoutMargins {
             NSLayoutConstraint.activate([
                 leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor, constant: inset.left),
-                trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor, constant: inset.right),
+                trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor, constant: -inset.right),
                 topAnchor.constraint(equalTo: view.topAnchor, constant: inset.top),
                 bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: inset.bottom)
             ])
         } else {
             NSLayoutConstraint.activate([
                 leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: inset.left),
-                trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: inset.right),
+                trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -inset.right),
                 topAnchor.constraint(equalTo: view.topAnchor, constant: inset.top),
                 bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: inset.bottom)
             ])

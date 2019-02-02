@@ -39,6 +39,7 @@
 		D930C4DF2205F1DF00CAF2F4 /* CreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C4DE2205F1DF00CAF2F4 /* CreatorViewController.swift */; };
 		D930C4E12205FF4B00CAF2F4 /* PanCropImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C4E02205FF4B00CAF2F4 /* PanCropImageView.swift */; };
 		D930C4E32206010900CAF2F4 /* PanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C4E22206010900CAF2F4 /* PanGestureRecognizer.swift */; };
+		D930C4E5220632B900CAF2F4 /* BitmojiSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C4E4220632B900CAF2F4 /* BitmojiSelectorController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		D930C4DE2205F1DF00CAF2F4 /* CreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorViewController.swift; sourceTree = "<group>"; };
 		D930C4E02205FF4B00CAF2F4 /* PanCropImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanCropImageView.swift; sourceTree = "<group>"; };
 		D930C4E22206010900CAF2F4 /* PanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGestureRecognizer.swift; sourceTree = "<group>"; };
+		D930C4E4220632B900CAF2F4 /* BitmojiSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmojiSelectorController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 				D930C4D12205558300CAF2F4 /* Views */,
 				D930C4CF2205537900CAF2F4 /* CameraViewController.swift */,
 				D930C4DE2205F1DF00CAF2F4 /* CreatorViewController.swift */,
+				D930C4E4220632B900CAF2F4 /* BitmojiSelectorController.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -338,8 +341,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BitLeague/Pods-BitLeague-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
 				"${PODS_ROOT}/SnapSDK/SCSDKBitmojiKit.framework",
@@ -350,8 +353,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKBitmojiKit.framework",
@@ -415,6 +418,7 @@
 				D930C4D02205537900CAF2F4 /* CameraViewController.swift in Sources */,
 				D930C4BE2205506000CAF2F4 /* Array+Extensions.swift in Sources */,
 				D930C4E32206010900CAF2F4 /* PanGestureRecognizer.swift in Sources */,
+				D930C4E5220632B900CAF2F4 /* BitmojiSelectorController.swift in Sources */,
 				D930C49D22054E6E00CAF2F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

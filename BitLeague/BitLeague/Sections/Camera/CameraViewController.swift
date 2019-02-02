@@ -11,15 +11,22 @@ import Hero
 import AVFoundation
 
 class CameraViewController: UIViewController {
+    // MARK: - Properties
+    var bitmojiURL: String
+    
+    // MARK: - Views
     private let captureButton = CaptureButtonView()
     private var previewLayer = AVCaptureVideoPreviewLayer()
     private var capturedImage = UIImageView()
+    private let bitmojiPreviewContainer = UIView()
+    private let bitmojiPreviewImage = UIImageView()
     
     // MARK: - AVFoundation
     private let session = AVCaptureSession()
     private let photoOutput = AVCapturePhotoOutput()
     
-    init() {
+    init(bitmojiURL: String) {
+        self.bitmojiURL = bitmojiURL
         super.init(nibName: nil, bundle: nil)
         hero.isEnabled = true
         
@@ -35,6 +42,8 @@ class CameraViewController: UIViewController {
         capturedImage.hero.id = "CapturedImage"
         view.addSubviewForAutoLayout(capturedImage)
         capturedImage.constrainToFill(view)
+        
+        addBitmojiPreview()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -44,6 +53,7 @@ class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCamera()
+        fetchBitmoji()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,6 +67,39 @@ class CameraViewController: UIViewController {
         session.stopRunning()
     }
     
+    // MARK: - View Setup
+    func addBitmojiPreview() {
+        bitmojiPreviewContainer.hero.modifiers = [.scale(0.5)]
+        bitmojiPreviewContainer.layer.cornerRadius = 8
+        bitmojiPreviewContainer.clipsToBounds = true
+        bitmojiPreviewContainer.backgroundColor = UIColor.white
+        view.addSubviewForAutoLayout(bitmojiPreviewContainer)
+        NSLayoutConstraint.activate([
+            bitmojiPreviewContainer.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -8),
+            bitmojiPreviewContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
+            bitmojiPreviewContainer.widthAnchor.constraint(equalToConstant: 125),
+            bitmojiPreviewContainer.heightAnchor.constraint(equalToConstant: 150)
+        ])
+        
+        bitmojiPreviewImage.contentMode = .scaleAspectFit
+        bitmojiPreviewContainer.addSubviewForAutoLayout(bitmojiPreviewImage)
+        bitmojiPreviewImage.constrainToFill(bitmojiPreviewContainer, inset: UIEdgeInsets(equalInset: 8))
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(returnToSelector))
+        bitmojiPreviewContainer.addGestureRecognizer(tapGesture)
+    }
+    
+    func fetchBitmoji() {
+        bitmojiPreviewImage.image = nil
+        DispatchQueue.global(qos: .background).async {
+            let image = UIImage.load(from: self.bitmojiURL)
+            DispatchQueue.main.async {
+                self.bitmojiPreviewImage.image = image
+            }
+        }
+    }
+    
+    // MARK: - Camera Setup
     private func checkAvailbility() {
         func failure() {
             present(UIAlertController(
@@ -122,6 +165,9 @@ class CameraViewController: UIViewController {
         photoOutput.capturePhoto(with: settings, delegate: self)
     }
     
+    @objc func returnToSelector() {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension CameraViewController: AVCapturePhotoCaptureDelegate {
