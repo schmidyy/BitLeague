@@ -7,24 +7,27 @@
 //
 
 import UIKit
+import SCSDKLoginKit
 
 class LoginViewController: UIViewController {
-
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupUI() {
+        loginButton.layer.cornerRadius = 10
     }
-    */
-
+    
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+        SCSDKLoginClient.login(from: self) { success, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            print(success ? "Success" : "Fail")
+        }
+    }
 }
