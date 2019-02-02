@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MojiControllView" customModule="BitLeague" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="228" height="68"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OpN-AC-k8K">
+                    <rect key="frame" x="0.0" y="16" width="228" height="52"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bv1-R9-77n">
+                            <rect key="frame" x="0.0" y="0.0" width="70" height="52"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="RBm-VU-u5y"/>
+                            </constraints>
+                            <state key="normal" image="feed_controll"/>
+                            <connections>
+                                <action selector="feedButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="ART-AS-aVq"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeD-We-KdW">
+                            <rect key="frame" x="158" y="0.0" width="70" height="52"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="wcb-GV-ggK"/>
+                            </constraints>
+                            <state key="normal" image="global_controll"/>
+                            <connections>
+                                <action selector="globalButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="XGc-WZ-I45"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Bv1-R9-77n" firstAttribute="leading" secondItem="OpN-AC-k8K" secondAttribute="leading" id="eps-CN-TTX"/>
+                        <constraint firstAttribute="bottom" secondItem="Bv1-R9-77n" secondAttribute="bottom" id="mo4-bt-m0D"/>
+                        <constraint firstAttribute="bottom" secondItem="LeD-We-KdW" secondAttribute="bottom" id="pfh-gh-A2u"/>
+                        <constraint firstItem="LeD-We-KdW" firstAttribute="top" secondItem="OpN-AC-k8K" secondAttribute="top" id="shK-c8-jUf"/>
+                        <constraint firstItem="Bv1-R9-77n" firstAttribute="top" secondItem="OpN-AC-k8K" secondAttribute="top" id="w0d-R3-zca"/>
+                        <constraint firstAttribute="trailing" secondItem="LeD-We-KdW" secondAttribute="trailing" id="y8o-Tm-Flu"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6He-0H-Pc8">
+                    <rect key="frame" x="84" y="0.0" width="60" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGn-7c-DkW">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                            <state key="normal" image="add_controll"/>
+                            <connections>
+                                <action selector="addButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="xBE-zg-dWQ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="OAe-MK-CiY"/>
+                        <constraint firstItem="IGn-7c-DkW" firstAttribute="top" secondItem="6He-0H-Pc8" secondAttribute="top" id="RTv-C9-Uwg"/>
+                        <constraint firstItem="IGn-7c-DkW" firstAttribute="leading" secondItem="6He-0H-Pc8" secondAttribute="leading" id="qDU-B5-r5B"/>
+                        <constraint firstAttribute="width" constant="60" id="uK3-fV-E4H"/>
+                        <constraint firstAttribute="trailing" secondItem="IGn-7c-DkW" secondAttribute="trailing" id="vmH-n4-gJB"/>
+                        <constraint firstAttribute="bottom" secondItem="IGn-7c-DkW" secondAttribute="bottom" id="yqP-FJ-DbF"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="6He-0H-Pc8" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="3vf-Z9-ASw"/>
+                <constraint firstItem="OpN-AC-k8K" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Agq-Om-t7b"/>
+                <constraint firstAttribute="trailing" secondItem="OpN-AC-k8K" secondAttribute="trailing" id="U8z-Hg-YtU"/>
+                <constraint firstItem="OpN-AC-k8K" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="ZqY-Se-aEo"/>
+                <constraint firstAttribute="bottom" secondItem="OpN-AC-k8K" secondAttribute="bottom" id="a4M-TN-9ZW"/>
+                <constraint firstItem="6He-0H-Pc8" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="kfY-S0-dOH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="addButton" destination="IGn-7c-DkW" id="z6P-25-lsS"/>
+                <outlet property="addView" destination="6He-0H-Pc8" id="GuD-8k-d1J"/>
+                <outlet property="feedButton" destination="Bv1-R9-77n" id="SPx-LA-vMI"/>
+                <outlet property="globalButton" destination="LeD-We-KdW" id="xUQ-FQ-P6V"/>
+                <outlet property="wideView" destination="OpN-AC-k8K" id="NZp-qN-GOC"/>
+            </connections>
+            <point key="canvasLocation" x="-8" y="415.59220389805103"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="add_controll" width="60" height="40"/>
+        <image name="feed_controll" width="60" height="40"/>
+        <image name="global_controll" width="60" height="40"/>
+    </resources>
+</document>

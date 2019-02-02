@@ -8,4 +8,6 @@ target 'BitLeague' do
   # Pods for BitLeague
   pod 'SnapSDK'
   pod 'Hero'
+  pod 'Firebase/Core'
+
 end

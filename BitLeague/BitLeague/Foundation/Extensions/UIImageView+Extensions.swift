@@ -35,3 +35,13 @@ extension UIImage.Orientation {
         return orientation
     }
 }
+
+extension UIImage {
+    static func load(from urlString: String) -> UIImage? {
+        guard let imageURL = URL(string: urlString),
+            let data = try? Data(contentsOf: imageURL) else {
+                return nil
+        }
+        return UIImage(data: data)
+    }
+}
