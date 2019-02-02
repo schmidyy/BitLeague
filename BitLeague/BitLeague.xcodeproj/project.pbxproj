@@ -19,6 +19,7 @@
 		271F3E30220618E2000D2320 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 271F3E2F220618E2000D2320 /* GoogleService-Info.plist */; };
 		271F3E322206357C000D2320 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E312206357C000D2320 /* Device.swift */; };
 		271F3E3422063FCD000D2320 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E3322063FCD000D2320 /* Post.swift */; };
+		271F3E3622064C50000D2320 /* FireClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E3522064C50000D2320 /* FireClient.swift */; };
 		27EDED3E220553D90064C04B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDED3D220553D90064C04B /* LoginViewController.swift */; };
 		D930C49D22054E6E00CAF2F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C49C22054E6E00CAF2F4 /* AppDelegate.swift */; };
 		D930C4A222054E6E00CAF2F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D930C4A022054E6E00CAF2F4 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		271F3E2F220618E2000D2320 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		271F3E312206357C000D2320 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		271F3E3322063FCD000D2320 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		271F3E3522064C50000D2320 /* FireClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireClient.swift; sourceTree = "<group>"; };
 		27EDED3D220553D90064C04B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7216C5EF42C179A98CF18710 /* Pods_BitLeague.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitLeague.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D702DD2D73EDCD7935E2CDC /* Pods-BitLeague.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitLeague.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitLeague/Pods-BitLeague.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				271F3E1E2205DE53000D2320 /* SnapClient.swift */,
 				271F3E312206357C000D2320 /* Device.swift */,
+				271F3E3522064C50000D2320 /* FireClient.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -281,7 +284,7 @@
 				D930C49622054E6E00CAF2F4 /* Frameworks */,
 				D930C49722054E6E00CAF2F4 /* Resources */,
 				C1F55D3DB1149ECEC005DC45 /* [CP] Embed Pods Frameworks */,
-				4D280EEA5446090E7830CEAA /* [CP] Copy Pods Resources */,
+				3C6B03C35C8A86864A7C2654 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -341,16 +344,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4D280EEA5446090E7830CEAA /* [CP] Copy Pods Resources */ = {
+		3C6B03C35C8A86864A7C2654 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BitLeague/Pods-BitLeague-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
 			);
@@ -436,6 +444,7 @@
 				271F3E262205EF84000D2320 /* FeedTableViewCell.swift in Sources */,
 				271F3E282205FE4D000D2320 /* SnapClient.swift in Sources */,
 				D930C4C62205506000CAF2F4 /* Date+Extensions.swift in Sources */,
+				271F3E3622064C50000D2320 /* FireClient.swift in Sources */,
 				D930C4D32205558F00CAF2F4 /* CaptureButtonView.swift in Sources */,
 				D930C4DC2205F0CE00CAF2F4 /* GradientView.swift in Sources */,
 				D930C4E12205FF4B00CAF2F4 /* PanCropImageView.swift in Sources */,
