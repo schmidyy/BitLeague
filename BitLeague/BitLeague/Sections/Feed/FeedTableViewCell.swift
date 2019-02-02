@@ -28,7 +28,7 @@ class FeedTableViewCell: UITableViewCell {
         formatCell()
         nameLabel.text = post.user.displayName
         clapCount.text = "\(post.claps)"
-        recreateCount.text = "\(post.bitmoji.reactions)"
+        recreateCount.text = "\(post.bitmoji.recreations)"
         
         DispatchQueue.main.async {
             if let bitmojiImage = UIImage.load(from: post.bitmoji.image),
