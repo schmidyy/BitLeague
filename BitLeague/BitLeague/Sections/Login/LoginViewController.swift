@@ -10,6 +10,7 @@ import UIKit
 import SCSDKLoginKit
 
 class LoginViewController: UIViewController {
+    @IBOutlet weak var gradientView: GradientView!
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
@@ -19,6 +20,8 @@ class LoginViewController: UIViewController {
     
     private func setupUI() {
         loginButton.layer.cornerRadius = 10
+        loginButton.imageView?.contentMode = .scaleAspectFit
+        view.sendSubviewToBack(gradientView)
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {

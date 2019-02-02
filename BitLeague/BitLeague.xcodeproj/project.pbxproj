@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D3FF828D99C3E450A6862B2 /* Pods_BitLeague.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7216C5EF42C179A98CF18710 /* Pods_BitLeague.framework */; };
+		271F3E1922056B3A000D2320 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E1822056B3A000D2320 /* GradientView.swift */; };
 		27EDED3E220553D90064C04B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDED3D220553D90064C04B /* LoginViewController.swift */; };
 		D930C49D22054E6E00CAF2F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C49C22054E6E00CAF2F4 /* AppDelegate.swift */; };
 		D930C4A222054E6E00CAF2F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D930C4A022054E6E00CAF2F4 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		271F3E1822056B3A000D2320 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		27EDED3D220553D90064C04B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7216C5EF42C179A98CF18710 /* Pods_BitLeague.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitLeague.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D702DD2D73EDCD7935E2CDC /* Pods-BitLeague.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitLeague.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitLeague/Pods-BitLeague.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 				DCD0EE3023AF438141ABE9F43FE52627 /* SCSDKCoreKit.framework */,
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		271F3E1722056B24000D2320 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				271F3E1822056B3A000D2320 /* GradientView.swift */,
+			);
+			path = Subclasses;
 			sourceTree = "<group>";
 		};
 		27EDED3F220553DF0064C04B /* Login */ = {
@@ -140,6 +150,7 @@
 		D930C4B12205504300CAF2F4 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				271F3E1722056B24000D2320 /* Subclasses */,
 				D930C4B22205506000CAF2F4 /* Extensions */,
 			);
 			path = Foundation;
@@ -318,6 +329,7 @@
 				D930C4C52205506000CAF2F4 /* UIEdgeInset+Extension.swift in Sources */,
 				D930C4C22205506000CAF2F4 /* UIAlertController+Extensions.swift in Sources */,
 				D930C4D02205537900CAF2F4 /* MojiCreatorViewController.swift in Sources */,
+				271F3E1922056B3A000D2320 /* GradientView.swift in Sources */,
 				D930C4BE2205506000CAF2F4 /* Array+Extensions.swift in Sources */,
 				D930C49D22054E6E00CAF2F4 /* AppDelegate.swift in Sources */,
 			);
