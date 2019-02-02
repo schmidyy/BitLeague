@@ -32,4 +32,15 @@ extension UIAlertController {
         preferredAction = skipAction
     }
     
+    /// Initialize an alert view titled "Oops" with `message` and "Retry" / "Skip" actions
+    convenience init(message: String?, completionHandler: @escaping (UIAlertAction) -> Void) {
+        self.init(title: "Oops", message: message, preferredStyle: .alert)
+        
+        let completionAction = UIAlertAction(title: "Okay", style: .default) { action in
+            completionHandler(action)
+        }
+        addAction(completionAction)
+        
+        preferredAction = completionAction
+    }
 }
