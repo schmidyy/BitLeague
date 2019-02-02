@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D3FF828D99C3E450A6862B2 /* Pods_BitLeague.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7216C5EF42C179A98CF18710 /* Pods_BitLeague.framework */; };
 		271F3E1922056B3A000D2320 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E1822056B3A000D2320 /* GradientView.swift */; };
+		271F3E1C2205DDED000D2320 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E1B2205DDED000D2320 /* User.swift */; };
+		271F3E1F2205DE53000D2320 /* SnapClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E1E2205DE53000D2320 /* SnapClient.swift */; };
 		27EDED3E220553D90064C04B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDED3D220553D90064C04B /* LoginViewController.swift */; };
 		D930C49D22054E6E00CAF2F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C49C22054E6E00CAF2F4 /* AppDelegate.swift */; };
 		D930C4A222054E6E00CAF2F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D930C4A022054E6E00CAF2F4 /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		271F3E1822056B3A000D2320 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		271F3E1B2205DDED000D2320 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		271F3E1E2205DE53000D2320 /* SnapClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapClient.swift; sourceTree = "<group>"; };
 		27EDED3D220553D90064C04B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7216C5EF42C179A98CF18710 /* Pods_BitLeague.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitLeague.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D702DD2D73EDCD7935E2CDC /* Pods-BitLeague.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitLeague.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitLeague/Pods-BitLeague.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +83,22 @@
 				271F3E1822056B3A000D2320 /* GradientView.swift */,
 			);
 			path = Subclasses;
+			sourceTree = "<group>";
+		};
+		271F3E1A2205DDDE000D2320 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				271F3E1B2205DDED000D2320 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		271F3E1D2205DE30000D2320 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				271F3E1E2205DE53000D2320 /* SnapClient.swift */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 		27EDED3F220553DF0064C04B /* Login */ = {
@@ -140,6 +160,8 @@
 			children = (
 				D930C4B12205504300CAF2F4 /* Foundation */,
 				D930C4CD2205536200CAF2F4 /* Sections */,
+				271F3E1A2205DDDE000D2320 /* Models */,
+				271F3E1D2205DE30000D2320 /* Client */,
 				27EDED40220554120064C04B /* Supporting Files */,
 				D930C4A022054E6E00CAF2F4 /* Main.storyboard */,
 				D930C4A822054E7000CAF2F4 /* Info.plist */,
@@ -325,10 +347,12 @@
 				D930C4C62205506000CAF2F4 /* Date+Extensions.swift in Sources */,
 				D930C4C32205506000CAF2F4 /* NSNumber+Extensions.swift in Sources */,
 				D930C4C12205506000CAF2F4 /* UIColor+Extensions.swift in Sources */,
+				271F3E1C2205DDED000D2320 /* User.swift in Sources */,
 				D930C4C02205506000CAF2F4 /* UIView+Extensions.swift in Sources */,
 				D930C4C52205506000CAF2F4 /* UIEdgeInset+Extension.swift in Sources */,
 				D930C4C22205506000CAF2F4 /* UIAlertController+Extensions.swift in Sources */,
 				D930C4D02205537900CAF2F4 /* MojiCreatorViewController.swift in Sources */,
+				271F3E1F2205DE53000D2320 /* SnapClient.swift in Sources */,
 				271F3E1922056B3A000D2320 /* GradientView.swift in Sources */,
 				D930C4BE2205506000CAF2F4 /* Array+Extensions.swift in Sources */,
 				D930C49D22054E6E00CAF2F4 /* AppDelegate.swift in Sources */,

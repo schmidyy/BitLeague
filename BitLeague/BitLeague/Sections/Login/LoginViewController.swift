@@ -30,7 +30,15 @@ class LoginViewController: UIViewController {
                 print(error.localizedDescription)
                 return
             }
-            print(success ? "Success" : "Fail")
+            
+            SnapClient.fetchUserData({ (user, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+                guard let user = user else { return }
+                print(user.displayName!)
+                print(user.avatar!)
+            })
         }
     }
 }
