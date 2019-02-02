@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D3FF828D99C3E450A6862B2 /* Pods_BitLeague.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7216C5EF42C179A98CF18710 /* Pods_BitLeague.framework */; };
+		271F3E1922056B3A000D2320 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E1822056B3A000D2320 /* GradientView.swift */; };
+		271F3E1C2205DDED000D2320 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E1B2205DDED000D2320 /* User.swift */; };
+		271F3E1F2205DE53000D2320 /* SnapClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E1E2205DE53000D2320 /* SnapClient.swift */; };
+		271F3E222205E45F000D2320 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F3E212205E45F000D2320 /* FeedViewController.swift */; };
+		27EDED3E220553D90064C04B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDED3D220553D90064C04B /* LoginViewController.swift */; };
 		D930C49D22054E6E00CAF2F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C49C22054E6E00CAF2F4 /* AppDelegate.swift */; };
-		D930C49F22054E6E00CAF2F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930C49E22054E6E00CAF2F4 /* ViewController.swift */; };
 		D930C4A222054E6E00CAF2F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D930C4A022054E6E00CAF2F4 /* Main.storyboard */; };
 		D930C4A422054E7000CAF2F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D930C4A322054E7000CAF2F4 /* Assets.xcassets */; };
 		D930C4A722054E7000CAF2F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D930C4A522054E7000CAF2F4 /* LaunchScreen.storyboard */; };
@@ -27,9 +32,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		271F3E1822056B3A000D2320 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		271F3E1B2205DDED000D2320 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		271F3E1E2205DE53000D2320 /* SnapClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapClient.swift; sourceTree = "<group>"; };
+		271F3E212205E45F000D2320 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		27EDED3D220553D90064C04B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7216C5EF42C179A98CF18710 /* Pods_BitLeague.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitLeague.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D702DD2D73EDCD7935E2CDC /* Pods-BitLeague.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitLeague.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitLeague/Pods-BitLeague.release.xcconfig"; sourceTree = "<group>"; };
+		96405284429DB796EE90B0A2 /* Pods-BitLeague.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitLeague.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitLeague/Pods-BitLeague.debug.xcconfig"; sourceTree = "<group>"; };
+		B13CD7CF2C4540DC2A5D13EC60AB3D7C /* SCSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SCSDKLoginKit.framework; sourceTree = "<group>"; };
 		D930C49922054E6E00CAF2F4 /* BitLeague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitLeague.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D930C49C22054E6E00CAF2F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D930C49E22054E6E00CAF2F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D930C4A122054E6E00CAF2F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D930C4A322054E7000CAF2F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D930C4A622054E7000CAF2F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,17 +66,97 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D3FF828D99C3E450A6862B2 /* Pods_BitLeague.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		271F3E16220558EC000D2320 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				B13CD7CF2C4540DC2A5D13EC60AB3D7C /* SCSDKLoginKit.framework */,
+				DCD0EE3023AF438141ABE9F43FE52627 /* SCSDKCoreKit.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		271F3E1722056B24000D2320 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				271F3E1822056B3A000D2320 /* GradientView.swift */,
+			);
+			path = Subclasses;
+			sourceTree = "<group>";
+		};
+		271F3E1A2205DDDE000D2320 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				271F3E1B2205DDED000D2320 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		271F3E1D2205DE30000D2320 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				271F3E1E2205DE53000D2320 /* SnapClient.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		271F3E202205E445000D2320 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				271F3E212205E45F000D2320 /* FeedViewController.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		27EDED3F220553DF0064C04B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				27EDED3D220553D90064C04B /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		27EDED40220554120064C04B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D930C49C22054E6E00CAF2F4 /* AppDelegate.swift */,
+				D930C4A322054E7000CAF2F4 /* Assets.xcassets */,
+				D930C4A522054E7000CAF2F4 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		57798B734215A3F6A21886EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7216C5EF42C179A98CF18710 /* Pods_BitLeague.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B417D542DE8BA10ED0E684CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				96405284429DB796EE90B0A2 /* Pods-BitLeague.debug.xcconfig */,
+				7D702DD2D73EDCD7935E2CDC /* Pods-BitLeague.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D930C49022054E6E00CAF2F4 = {
 			isa = PBXGroup;
 			children = (
 				D930C49B22054E6E00CAF2F4 /* BitLeague */,
 				D930C49A22054E6E00CAF2F4 /* Products */,
+				B417D542DE8BA10ED0E684CE /* Pods */,
+				57798B734215A3F6A21886EF /* Frameworks */,
+				271F3E16220558EC000D2320 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,11 +173,10 @@
 			children = (
 				D930C4B12205504300CAF2F4 /* Foundation */,
 				D930C4CD2205536200CAF2F4 /* Sections */,
-				D930C49C22054E6E00CAF2F4 /* AppDelegate.swift */,
-				D930C49E22054E6E00CAF2F4 /* ViewController.swift */,
+				271F3E1A2205DDDE000D2320 /* Models */,
+				271F3E1D2205DE30000D2320 /* Client */,
+				27EDED40220554120064C04B /* Supporting Files */,
 				D930C4A022054E6E00CAF2F4 /* Main.storyboard */,
-				D930C4A322054E7000CAF2F4 /* Assets.xcassets */,
-				D930C4A522054E7000CAF2F4 /* LaunchScreen.storyboard */,
 				D930C4A822054E7000CAF2F4 /* Info.plist */,
 			);
 			path = BitLeague;
@@ -93,6 +185,7 @@
 		D930C4B12205504300CAF2F4 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				271F3E1722056B24000D2320 /* Subclasses */,
 				D930C4B22205506000CAF2F4 /* Extensions */,
 			);
 			path = Foundation;
@@ -118,6 +211,8 @@
 		D930C4CD2205536200CAF2F4 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				271F3E202205E445000D2320 /* Feed */,
+				27EDED3F220553DF0064C04B /* Login */,
 				D930C4CE2205536900CAF2F4 /* Camera */,
 			);
 			path = Sections;
@@ -147,9 +242,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D930C4AB22054E7000CAF2F4 /* Build configuration list for PBXNativeTarget "BitLeague" */;
 			buildPhases = (
+				F0EB36324AF0E602A5B8973F /* [CP] Check Pods Manifest.lock */,
 				D930C49522054E6E00CAF2F4 /* Sources */,
 				D930C49622054E6E00CAF2F4 /* Frameworks */,
 				D930C49722054E6E00CAF2F4 /* Resources */,
+				C1F55D3DB1149ECEC005DC45 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,18 +303,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C1F55D3DB1149ECEC005DC45 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BitLeague/Pods-BitLeague-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
+				"${PODS_ROOT}/SnapSDK/SCSDKBitmojiKit.framework",
+				"${PODS_ROOT}/SnapSDK/SCSDKCoreKit.framework",
+				"${PODS_ROOT}/SnapSDK/SCSDKCreativeKit.framework",
+				"${PODS_ROOT}/SnapSDK/SCSDKLoginKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKBitmojiKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKCreativeKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKLoginKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BitLeague/Pods-BitLeague-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0EB36324AF0E602A5B8973F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BitLeague-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D930C49522054E6E00CAF2F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27EDED3E220553D90064C04B /* LoginViewController.swift in Sources */,
 				D930C4C82205506000CAF2F4 /* UITextField+Extensions.swift in Sources */,
 				D930C4C42205506000CAF2F4 /* UIStackView+Extensions.swift in Sources */,
 				D930C4C62205506000CAF2F4 /* Date+Extensions.swift in Sources */,
 				D930C4D32205558F00CAF2F4 /* CaptureButtonView.swift in Sources */,
 				D930C4C32205506000CAF2F4 /* NSNumber+Extensions.swift in Sources */,
 				D930C4C12205506000CAF2F4 /* UIColor+Extensions.swift in Sources */,
-				D930C49F22054E6E00CAF2F4 /* ViewController.swift in Sources */,
+				271F3E222205E45F000D2320 /* FeedViewController.swift in Sources */,
+				271F3E1C2205DDED000D2320 /* User.swift in Sources */,
 				D930C4C02205506000CAF2F4 /* UIView+Extensions.swift in Sources */,
 				D930C4C52205506000CAF2F4 /* UIEdgeInset+Extension.swift in Sources */,
 				D930C4DB2205EDB400CAF2F4 /* UIImageView+Extensions.swift in Sources */,
@@ -368,10 +524,15 @@
 		};
 		D930C4AC22054E7000CAF2F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96405284429DB796EE90B0A2 /* Pods-BitLeague.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2N92EHKU84;
+				DEVELOPMENT_TEAM = BNS58ZR5ZP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/SnapSDK",
+				);
 				INFOPLIST_FILE = BitLeague/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -386,10 +547,15 @@
 		};
 		D930C4AD22054E7000CAF2F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D702DD2D73EDCD7935E2CDC /* Pods-BitLeague.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2N92EHKU84;
+				DEVELOPMENT_TEAM = BNS58ZR5ZP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/SnapSDK",
+				);
 				INFOPLIST_FILE = BitLeague/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

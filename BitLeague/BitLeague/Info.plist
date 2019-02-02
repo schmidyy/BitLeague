@@ -43,5 +43,36 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>SCSDKClientId</key>
+	<string>3d8b3f59-ae11-4f96-8e4b-eca0df2d1a01</string>
+	<key>SCSDKScopes</key>
+	<array>
+		<string>https://auth.snapchat.com/oauth2/api/user.external_id</string>
+		<string>https://auth.snapchat.com/oauth2/api/user.display_name</string>
+		<string>https://auth.snapchat.com/oauth2/api/user.bitmoji.avatar</string>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>snapchat</string>
+		<string>bitmoji-sdk</string>
+		<string>itms-apps</string>
+	</array>
+	<key>CFBundleURLSchemes</key>
+	<array>
+		<string>bitleague</string>
+	</array>
+	<key>SCSDKRedirectUrl</key>
+	<string>bitleague://snap-kit/oauth2</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>bitleague</string>
+			</array>
+			<key>CFBundleURLName</key>
+			<string>com.kirkbyo.BitLeague</string>
+		</dict>
+	</array>
 </dict>
 </plist>
