@@ -10,7 +10,7 @@ import SCSDKLoginKit
 
 enum SnapClient {
     static func fetchUserData(_ completion: @escaping ((User?, Error?) -> ())) {
-        let query = "{ me { displayName, bitmoji { avatar }}}"
+        let query = "{ me { externalId, displayName, bitmoji { avatar }}}"
         
         SCSDKLoginClient.fetchUserData(
             withQuery: query,

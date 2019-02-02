@@ -21,8 +21,6 @@ class FeedTableViewCell: UITableViewCell {
     func formatCell() {
         cellContainerView.layer.cornerRadius = 20
         cellContainerView.clipsToBounds = true
-        
-        
     }
 
 }
