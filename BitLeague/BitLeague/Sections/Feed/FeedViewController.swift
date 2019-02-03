@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SCSDKLoginKit
 
 class FeedViewController: MojiViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var feedTableView: UITableView!
+    @IBOutlet weak var avatarImage: UIImageView!
     var user: User!
     private var posts: [Post] = []
     
@@ -21,6 +23,10 @@ class FeedViewController: MojiViewController {
         feedTableView.dataSource = self
         selectedControl = .feed
         
+        let recogniser = UITapGestureRecognizer(target: self, action: #selector(avatarTapped))
+        avatarImage.isUserInteractionEnabled = true
+        avatarImage.addGestureRecognizer(recogniser)
+        
         fetchPosts()
     }
     
@@ -30,6 +36,21 @@ class FeedViewController: MojiViewController {
             self.posts = posts
             self.feedTableView.reloadData()
         }
+    }
+    
+    @objc func avatarTapped() {
+        let actionSheet = UIAlertController(title: Device.user()?.displayName, message: nil, preferredStyle: .actionSheet)
+        let signOutAction = UIAlertAction(title: "Sign out", style: .destructive) { _ in
+            SCSDKLoginClient.unlinkAllSessions(completion: { [weak self] success in
+                if success {
+                    self?.dismiss(animated: true)
+                }
+            })
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        actionSheet.addAction(signOutAction)
+        actionSheet.addAction(cancelAction)
+        present(actionSheet, animated: true)
     }
 }
 

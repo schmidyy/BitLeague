@@ -384,6 +384,7 @@
                         <viewLayoutGuide key="safeArea" id="BFH-yg-4lV"/>
                     </view>
                     <connections>
+                        <outlet property="avatarImage" destination="1OQ-Jc-HyH" id="opj-C5-kWv"/>
                         <outlet property="feedTableView" destination="n1g-hY-1kX" id="GNK-6P-GoH"/>
                         <outlet property="headerView" destination="7Wb-ai-qYa" id="f5g-ld-noP"/>
                     </connections>
