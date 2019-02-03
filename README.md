@@ -2,13 +2,25 @@
 
 A QHacks 2019 project!
 
+Built by:
+
+- Ricky Zhang ([@RickyZhangCA](https://github.com/RickyZhangCA)): Design
+- Mat Schmid ([@schmidyy](https://github.com/schmidyy)): iOS
+- Ozzie Kirkby ([@kirkbyo](https://github.com/kirkbyo)): iOS
+
+----
+
+| Login | Snap Auth | Home Feed | Image Capture |
+| ---- | ---- | ---- | ---- |
+| ![img_7734](https://user-images.githubusercontent.com/22358682/52177478-50263a80-278f-11e9-926f-73c3e94fc5a7.PNG) | ![img_7735](https://user-images.githubusercontent.com/22358682/52177481-5ddbc000-278f-11e9-9587-8a72b1730f9c.PNG) | ![img_7736](https://user-images.githubusercontent.com/22358682/52177486-76e47100-278f-11e9-8d2c-ffa54b831d59.PNG) | ![img_7737](https://user-images.githubusercontent.com/22358682/52177519-e8242400-278f-11e9-9427-5eecb01fbac0.PNG) |
+
 ## Inspiration
 
 Everybody likes Bitmojis - so we wanted to game-ify recreating them!
 
 ## What it does
 
-BitLeague lets you create, browse, and vote on community recreations of Bitmojis 
+BitLeague lets you **create, browse, and vote** on community recreations of Bitmojis 
 
 ## How we built it
 
