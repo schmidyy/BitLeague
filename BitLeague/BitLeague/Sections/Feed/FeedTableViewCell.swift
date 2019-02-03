@@ -30,15 +30,19 @@ class FeedTableViewCell: UITableViewCell {
         clapCount.text = "\(post.claps)"
         recreateCount.text = "\(post.bitmoji.recreations)"
         
+        self.bitmojiImageView.image = UIImage()
+        self.avatarImageView.image = UIImage()
+        self.reactImage.image = UIImage()
         DispatchQueue.global(priority: .background).async {
             guard let bitmojiImage = UIImage.load(from: post.bitmoji.image),
                 let avatarImage = UIImage.load(from: post.user.avatar!),
-                let reactImage = UIImage.load(from: post.image)
+                let reactionImage = UIImage.load(from: post.image)
             else { return }
+            
             DispatchQueue.main.async {
                 self.bitmojiImageView.image = bitmojiImage
                 self.avatarImageView.image = avatarImage
-                self.reactImage.image = reactImage
+                self.reactImage.image = reactionImage
             }
         }
     }

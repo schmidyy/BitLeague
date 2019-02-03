@@ -8,9 +8,17 @@
 
 import FirebaseFirestore
 
-enum FireClient {
-    static func posts(completion: @escaping(_ coins: [Post]?) -> Void) {
-        let db = Firestore.firestore()
+struct FireClient {
+    static let shared = FireClient()
+
+    let db = Firestore.firestore()
+    init() {
+        let settings = db.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        db.settings = settings
+    }
+    
+    func posts(completion: @escaping(_ coins: [Post]?) -> Void) {
         db.collection("posts").getDocuments { (snapshot, error) in
             if let error = error {
                 print(error.localizedDescription)

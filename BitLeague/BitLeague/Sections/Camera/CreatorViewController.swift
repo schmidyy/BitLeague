@@ -94,16 +94,15 @@ class CreatorViewController: UIViewController {
     
     @objc func postAction() {
         guard let cropped = croppedImage(), let data = cropped.pngData() else { return }
+        
         guard let user = Device.user(),
             let userID = user.externalId,
             let avatarURL = user.avatar,
             let displayName = user.displayName
         else { return }
+        
         let storage = Storage.storage().reference()
-        let db = Firestore.firestore()
-        let settings = db.settings
-        settings.areTimestampsInSnapshotsEnabled = true
-        db.settings = settings
+        let db = FireClient.shared.db
         
         let reactionRef = storage.child("reactions/\(UUID().uuidString)")
         reactionRef.putData(data, metadata: nil) { (metadata, error) in
@@ -111,21 +110,31 @@ class CreatorViewController: UIViewController {
                 self.handlePosting(error: error!)
                 return
             }
-            let postId = UUID().uuidString
-            db.collection("posts").document(postId).setData([
-                "bitmoji": [
-                    "image": self.bitmojiURL,
-                    "recreations": 0
-                ],
-                "claps": 0,
-                "date": Date(),
-                "image": reactionRef.fullPath,
-                "user": [
-                    "avatar": avatarURL,
-                    "displayName": displayName,
-                    "id": userID
-                ]
-            ])
+            reactionRef.downloadURL { url, error in
+                guard let url = url, error == nil else {
+                    if let error = error {
+                        self.handlePosting(error: error)
+                    }
+                    return
+                }
+                
+                let postId = UUID().uuidString
+                db.collection("posts").document(postId).setData([
+                    "bitmoji": [
+                        "image": self.bitmojiURL,
+                        "recreations": 0
+                    ],
+                    "claps": 0,
+                    "date": Date(),
+                    "image": url.absoluteString,
+                    "user": [
+                        "avatar": avatarURL,
+                        "displayName": displayName,
+                        "id": userID
+                    ]
+                ])
+                //self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
@@ -134,19 +143,86 @@ class CreatorViewController: UIViewController {
     }
     
     func croppedImage() -> UIImage? {
-        guard let image = reactionImage.image else { return nil }
+        guard let image = reactionImage.image?.fixedOrientation() else { return nil }
         guard let cgimage = image.cgImage else { return nil }
         let container = reactionImage.bounds
         
-        let posX: CGFloat = 0.0
-        let posY: CGFloat = reactionImage.offset()
         let ratio = image.size.width / container.width
+        let posX: CGFloat = 0.0
+        // Okay so why this logic... Well so first you need to move the position to the center of the image,
+        // now you need to move the "crop offset" defined by the user and finally you need to translate
+        // even more down since the crop bounds offset is technically measured from the center.
+        let posY: CGFloat = (image.size.height / 2) - (reactionImage.offset() * ratio) - ((container.height * ratio) / 2)
         
         let rect: CGRect = CGRect(x: posX, y: posY, width: image.size.width, height: container.height * ratio)
         
         // Create bitmap image from context using the rect
         guard let imageRef = cgimage.cropping(to: rect) else { return nil }
-        
         return UIImage(cgImage: imageRef, scale: image.scale, orientation: image.imageOrientation)
+    }
+}
+
+extension UIImage {
+    
+    func fixedOrientation() -> UIImage? {
+        
+        guard imageOrientation != UIImage.Orientation.up else {
+            //This is default orientation, don't need to do anything
+            return self.copy() as? UIImage
+        }
+        
+        guard let cgImage = self.cgImage else {
+            //CGImage is not available
+            return nil
+        }
+        
+        guard let colorSpace = cgImage.colorSpace, let ctx = CGContext(data: nil, width: Int(size.width), height: Int(size.height), bitsPerComponent: cgImage.bitsPerComponent, bytesPerRow: 0, space: colorSpace, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else {
+            return nil //Not able to create CGContext
+        }
+        
+        var transform: CGAffineTransform = CGAffineTransform.identity
+        
+        switch imageOrientation {
+        case .down, .downMirrored:
+            transform = transform.translatedBy(x: size.width, y: size.height)
+            transform = transform.rotated(by: CGFloat.pi)
+            break
+        case .left, .leftMirrored:
+            transform = transform.translatedBy(x: size.width, y: 0)
+            transform = transform.rotated(by: CGFloat.pi / 2.0)
+            break
+        case .right, .rightMirrored:
+            transform = transform.translatedBy(x: 0, y: size.height)
+            transform = transform.rotated(by: CGFloat.pi / -2.0)
+            break
+        case .up, .upMirrored:
+            break
+        }
+        
+        //Flip image one more time if needed to, this is to prevent flipped image
+        switch imageOrientation {
+        case .upMirrored, .downMirrored:
+            transform = transform.translatedBy(x: size.width, y: 0)
+            transform = transform.scaledBy(x: -1, y: 1)
+            break
+        case .leftMirrored, .rightMirrored:
+            transform = transform.translatedBy(x: size.height, y: 0)
+            transform = transform.scaledBy(x: -1, y: 1)
+        case .up, .down, .left, .right:
+            break
+        }
+        
+        ctx.concatenate(transform)
+        
+        switch imageOrientation {
+        case .left, .leftMirrored, .right, .rightMirrored:
+            ctx.draw(self.cgImage!, in: CGRect(x: 0, y: 0, width: size.height, height: size.width))
+        default:
+            ctx.draw(self.cgImage!, in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+            break
+        }
+        
+        guard let newCGImage = ctx.makeImage() else { return nil }
+        return UIImage.init(cgImage: newCGImage, scale: 1, orientation: .up)
     }
 }
