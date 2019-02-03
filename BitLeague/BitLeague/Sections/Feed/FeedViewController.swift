@@ -21,6 +21,10 @@ class FeedViewController: MojiViewController {
         feedTableView.dataSource = self
         selectedControl = .feed
         
+        fetchPosts()
+    }
+    
+    private func fetchPosts() {
         FireClient.shared.posts(sortingKey: .date) { posts in
             guard let posts = posts else { return }
             self.posts = posts
@@ -41,6 +45,13 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedTableViewCell
         cell.formatCell(posts[indexPath.row])
+        cell.delegate = self
         return cell
+    }
+}
+
+extension FeedViewController: FeedCellProtocol {
+    func refreshTable() {
+        fetchPosts()
     }
 }

@@ -22,6 +22,16 @@ struct FireClient {
         db.settings = settings
     }
     
+    func clap(_ id: String, claps: Int, completion: @escaping() -> Void) {
+        let postRef = db.collection("posts").document(id)
+        postRef.updateData(["claps": claps + 1]) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            completion()
+        }
+    }
+
     func posts(sortingKey: SortingKey, completion: @escaping(_ coins: [Post]?) -> Void) {
         db.collection("posts").order(by: sortingKey.rawValue, descending: true).getDocuments { (snapshot, error) in
             if let error = error {

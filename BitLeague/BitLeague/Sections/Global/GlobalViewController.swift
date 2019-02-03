@@ -21,6 +21,10 @@ class GlobalViewController: MojiViewController {
         feedTableView.dataSource = self
         selectedControl = .global
         
+        fetchPosts()
+    }
+    
+    private func fetchPosts() {
         FireClient.shared.posts(sortingKey: .claps) { posts in
             guard let posts = posts else { return }
             self.posts = posts
@@ -40,7 +44,14 @@ extension GlobalViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedTableViewCell
+        cell.delegate = self
         cell.formatCell(posts[indexPath.row])
         return cell
+    }
+}
+
+extension GlobalViewController: FeedCellProtocol {
+    func refreshTable() {
+        fetchPosts()
     }
 }
