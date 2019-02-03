@@ -20,6 +20,14 @@ class GlobalViewController: UIViewController {
         feedTableView.delegate = self
         feedTableView.dataSource = self
         
+        DispatchQueue.main.async {
+            if let avatar = Device.user()?.avatar {
+                self.avatarImageView.image = UIImage.load(from: avatar)
+            } else {
+                self.avatarImageView.image = UIImage(named: "template_avatar")
+            }
+        }
+        
         fetchPosts()
     }
     
