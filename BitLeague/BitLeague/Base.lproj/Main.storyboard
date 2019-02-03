@@ -412,12 +412,12 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VlZ-9g-o9y">
-                                        <rect key="frame" x="14" y="58.666666666666657" width="70" height="21"/>
+                                        <rect key="frame" x="14" y="58.666666666666657" width="120" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="CKQ-ZM-idu"/>
+                                            <constraint firstAttribute="width" constant="120" id="CKQ-ZM-idu"/>
                                             <constraint firstAttribute="height" constant="21" id="lC8-5r-STr"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>

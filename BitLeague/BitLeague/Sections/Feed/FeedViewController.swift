@@ -25,6 +25,14 @@ class FeedViewController: UIViewController {
         avatarImage.isUserInteractionEnabled = true
         avatarImage.addGestureRecognizer(recogniser)
         
+        DispatchQueue.main.async {
+            if let avatar = self.user.avatar {
+                self.avatarImage.image = UIImage.load(from: avatar)
+            } else {
+                self.avatarImage.image = UIImage(named: "template_avatar")
+            }
+        }
+        
         fetchPosts()
     }
     
