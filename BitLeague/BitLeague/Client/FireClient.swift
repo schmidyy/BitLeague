@@ -31,6 +31,11 @@ struct FireClient {
             completion()
         }
     }
+    
+    func delete(_ id: String) {
+        let postRef = db.collection("posts").document(id)
+        postRef.delete()
+    }
 
     func posts(sortingKey: SortingKey, completion: @escaping(_ coins: [Post]?) -> Void) {
         db.collection("posts").order(by: sortingKey.rawValue, descending: true).addSnapshotListener { snapshot, error in

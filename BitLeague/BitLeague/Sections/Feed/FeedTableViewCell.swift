@@ -47,6 +47,11 @@ class FeedTableViewCell: UITableViewCell {
         tap.numberOfTapsRequired = 2
         cellContainerView.addGestureRecognizer(tap)
         
+        let deleteGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))
+        deleteGesture.numberOfTouchesRequired = 2
+        deleteGesture.minimumPressDuration = 2
+        cellContainerView.addGestureRecognizer(deleteGesture)
+        
         DispatchQueue.global(qos: .background).async {
             guard let bitmojiImage = UIImage.load(from: post.bitmoji.image),
                 let avatarImage = UIImage.load(from: post.user.avatar!),
@@ -59,10 +64,12 @@ class FeedTableViewCell: UITableViewCell {
                 self.reactImage.image = reactionImage
             }
         }
-        
-        
 
         tag = post.id.hashValue
+    }
+    
+    @objc func longPressed() {
+        FireClient.shared.delete(id)
     }
     
     @objc func doubleTapped() {

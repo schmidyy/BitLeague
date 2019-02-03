@@ -45,10 +45,11 @@ class MojiViewController: UIViewController {
         globalViewController.view.constrainToFill(view)
         globalViewController.view.isHidden = true
         
-        setSelectedControlView(to: .feed)
+        setSelectedControlView(to: .feed, forced: true)
     }
     
-    func setSelectedControlView(to control: SelectedControl) {
+    func setSelectedControlView(to control: SelectedControl, forced: Bool = false) {
+        guard control != selectedControl || forced == true else { return }
         switch control {
         case .feed:
             UIView.animate(withDuration: 0.5) {

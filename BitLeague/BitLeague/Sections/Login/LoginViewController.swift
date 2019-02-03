@@ -47,6 +47,7 @@ class LoginViewController: UIViewController {
     private func presentFeed(_ user: User) {
         let navigation = UINavigationController(rootViewController: MojiViewController())
         navigation.isNavigationBarHidden = true
+        navigation.hero.isEnabled = true
         present(navigation, animated: true)
     }
     

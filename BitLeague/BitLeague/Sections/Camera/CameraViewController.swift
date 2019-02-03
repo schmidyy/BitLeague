@@ -70,6 +70,7 @@ class CameraViewController: UIViewController {
     
     // MARK: - View Setup
     func addBitmojiPreview() {
+        bitmojiPreviewImage.hero.id = "BitmojiContainer"
         bitmojiPreviewContainer.hero.modifiers = [.whenAppearing(.scale(0.5))]
         bitmojiPreviewContainer.layer.cornerRadius = 8
         bitmojiPreviewContainer.clipsToBounds = true
@@ -184,7 +185,9 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         capturedImage.hero.id = "CaptureImage"
         capturedImage.image = image
         
-        let creator = CreatorViewController(bitmojiURL: bitmojiURL)
+        let creator = CreatorViewController(
+            bitmojiURL: bitmojiURL, bitmoji: bitmojiPreviewImage.image ?? UIImage()
+        )
         creator.reactionImage.image = image
         navigationController?.pushViewController(creator, animated: true)
     }
