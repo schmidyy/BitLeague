@@ -49,8 +49,10 @@ extension MojiViewController: MojiControlProtocol {
             present(feedViewController, animated: true)
         case .add:
             present(BitmojiSelectorViewController(), animated: true)
-        default:
-            break
+        case .global:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let globalViewController = storyboard.instantiateViewController(withIdentifier: "global") as! GlobalViewController
+            present(globalViewController, animated: true)
         }
     }
 }

@@ -9,6 +9,10 @@
 import FirebaseFirestore
 
 struct FireClient {
+    enum SortingKey: String {
+        case date, claps
+    }
+    
     static let shared = FireClient()
 
     let db = Firestore.firestore()
@@ -18,8 +22,8 @@ struct FireClient {
         db.settings = settings
     }
     
-    func posts(completion: @escaping(_ coins: [Post]?) -> Void) {
-        db.collection("posts").getDocuments { (snapshot, error) in
+    func posts(sortingKey: SortingKey, completion: @escaping(_ coins: [Post]?) -> Void) {
+        db.collection("posts").order(by: sortingKey.rawValue, descending: true).getDocuments { (snapshot, error) in
             if let error = error {
                 print(error.localizedDescription)
             }
@@ -27,6 +31,7 @@ struct FireClient {
             var posts: [Post] = []
             for doc in snapshot!.documents {
                 // I hope no one ever looks at this code
+                print("\(doc.documentID) -> \(doc.data())")
                 let data = doc.data()
                 let userDict = (data["user"] as! [String: Any])
                 let bitmojiDict = (data["bitmoji"] as! [String: Any])

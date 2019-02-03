@@ -1,5 +1,5 @@
 //
-//  FeedViewController.swift
+//  GlobalViewController.swift
 //  BitLeague
 //
 //  Created by Mat Schmid on 2019-02-02.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class FeedViewController: MojiViewController {
-    @IBOutlet weak var headerView: UIView!
+class GlobalViewController: MojiViewController {
+
     @IBOutlet weak var feedTableView: UITableView!
-    var user: User!
+    @IBOutlet weak var avatarImageView: UIImageView!
     private var posts: [Post] = []
     
     override func viewDidLoad() {
@@ -19,9 +19,9 @@ class FeedViewController: MojiViewController {
 
         feedTableView.delegate = self
         feedTableView.dataSource = self
-        selectedControl = .feed
+        selectedControl = .global
         
-        FireClient.shared.posts(sortingKey: .date) { posts in
+        FireClient.shared.posts(sortingKey: .claps) { posts in
             guard let posts = posts else { return }
             self.posts = posts
             self.feedTableView.reloadData()
@@ -29,7 +29,7 @@ class FeedViewController: MojiViewController {
     }
 }
 
-extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
+extension GlobalViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 280
     }
