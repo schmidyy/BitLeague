@@ -70,13 +70,6 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedTableViewCell
         cell.formatCell(posts[indexPath.row])
-        cell.delegate = self
         return cell
-    }
-}
-
-extension FeedViewController: FeedCellProtocol {
-    func refreshTable() {
-        fetchPosts()
     }
 }

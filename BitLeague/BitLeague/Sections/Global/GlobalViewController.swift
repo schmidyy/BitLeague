@@ -49,14 +49,7 @@ extension GlobalViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedTableViewCell
-        cell.delegate = self
         cell.formatCell(posts[indexPath.row])
         return cell
-    }
-}
-
-extension GlobalViewController: FeedCellProtocol {
-    func refreshTable() {
-        fetchPosts()
     }
 }

@@ -24,7 +24,6 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var clapCount: UILabel!
     private var id: String!
     private var claps: Int!
-    var delegate: FeedCellProtocol?
     
     func formatCell() {
         cellContainerView.layer.cornerRadius = 20
@@ -39,9 +38,11 @@ class FeedTableViewCell: UITableViewCell {
         clapCount.text = "\(post.claps)"
         recreateCount.text = "\(post.bitmoji.recreations)"
         
-        self.bitmojiImageView.image = UIImage()
-        self.avatarImageView.image = UIImage()
-        self.reactImage.image = UIImage()
+        if tag != post.id.hashValue {
+            bitmojiImageView.image = UIImage()
+            avatarImageView.image = UIImage()
+            reactImage.image = UIImage()
+        }
         let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
         tap.numberOfTapsRequired = 2
         cellContainerView.addGestureRecognizer(tap)
@@ -58,11 +59,14 @@ class FeedTableViewCell: UITableViewCell {
                 self.reactImage.image = reactionImage
             }
         }
+        
+        
+
+        tag = post.id.hashValue
     }
     
     @objc func doubleTapped() {
         FireClient.shared.clap(id, claps: claps) {
-            self.delegate?.refreshTable()
         }
         
         let clapView = UIView()
