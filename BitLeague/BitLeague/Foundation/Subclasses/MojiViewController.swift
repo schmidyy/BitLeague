@@ -49,7 +49,7 @@ class MojiViewController: UIViewController {
     }
     
     func setSelectedControlView(to control: SelectedControl) {
-        switch selectedControl {
+        switch control {
         case .feed:
             UIView.animate(withDuration: 0.5) {
                 self.globalViewController.view.isHidden = true
