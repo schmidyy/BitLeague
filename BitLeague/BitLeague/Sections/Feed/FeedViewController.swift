@@ -21,7 +21,7 @@ class FeedViewController: MojiViewController {
         feedTableView.dataSource = self
         selectedControl = .feed
         
-        FireClient.posts { posts in
+        FireClient.posts(sortingKey: .date) { posts in
             guard let posts = posts else { return }
             self.posts = posts
             self.feedTableView.reloadData()

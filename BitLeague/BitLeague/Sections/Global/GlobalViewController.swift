@@ -8,23 +8,39 @@
 
 import UIKit
 
-class GlobalViewController: UIViewController {
+class GlobalViewController: MojiViewController {
 
+    @IBOutlet weak var feedTableView: UITableView!
+    @IBOutlet weak var avatarImageView: UIImageView!
+    private var posts: [Post] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        feedTableView.delegate = self
+        feedTableView.dataSource = self
+        selectedControl = .global
+        
+        FireClient.posts(sortingKey: .claps) { posts in
+            guard let posts = posts else { return }
+            self.posts = posts
+            self.feedTableView.reloadData()
+        }
+    }
+}
+
+extension GlobalViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 280
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedTableViewCell
+        cell.formatCell(posts[indexPath.row])
+        return cell
+    }
 }

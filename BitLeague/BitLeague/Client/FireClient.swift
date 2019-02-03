@@ -8,10 +8,14 @@
 
 import FirebaseFirestore
 
+enum SortingKey: String {
+    case date, claps
+}
+
 enum FireClient {
-    static func posts(completion: @escaping(_ coins: [Post]?) -> Void) {
+    static func posts(sortingKey: SortingKey, completion: @escaping(_ coins: [Post]?) -> Void) {
         let db = Firestore.firestore()
-        db.collection("posts").order(by: "date", descending: true).getDocuments { (snapshot, error) in
+        db.collection("posts").order(by: sortingKey.rawValue, descending: true).getDocuments { (snapshot, error) in
             if let error = error {
                 print(error.localizedDescription)
             }
