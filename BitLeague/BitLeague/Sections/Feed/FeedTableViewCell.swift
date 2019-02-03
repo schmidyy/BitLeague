@@ -46,7 +46,7 @@ class FeedTableViewCell: UITableViewCell {
         tap.numberOfTapsRequired = 2
         cellContainerView.addGestureRecognizer(tap)
         
-        DispatchQueue.global(priority: .background).async {
+        DispatchQueue.global(qos: .background).async {
             guard let bitmojiImage = UIImage.load(from: post.bitmoji.image),
                 let avatarImage = UIImage.load(from: post.user.avatar!),
                 let reactionImage = UIImage.load(from: post.image)

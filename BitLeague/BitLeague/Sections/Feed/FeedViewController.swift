@@ -9,11 +9,10 @@
 import UIKit
 import SCSDKLoginKit
 
-class FeedViewController: MojiViewController {
+class FeedViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var feedTableView: UITableView!
     @IBOutlet weak var avatarImage: UIImageView!
-    var user: User!
     private var posts: [Post] = []
     
     override func viewDidLoad() {
@@ -21,7 +20,6 @@ class FeedViewController: MojiViewController {
 
         feedTableView.delegate = self
         feedTableView.dataSource = self
-        selectedControl = .feed
         
         let recogniser = UITapGestureRecognizer(target: self, action: #selector(avatarTapped))
         avatarImage.isUserInteractionEnabled = true

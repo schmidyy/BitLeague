@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GlobalViewController: MojiViewController {
+class GlobalViewController: UIViewController {
 
     @IBOutlet weak var feedTableView: UITableView!
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -19,7 +19,6 @@ class GlobalViewController: MojiViewController {
 
         feedTableView.delegate = self
         feedTableView.dataSource = self
-        selectedControl = .global
         
         fetchPosts()
     }

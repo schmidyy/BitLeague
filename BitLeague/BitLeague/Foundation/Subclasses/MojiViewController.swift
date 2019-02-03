@@ -9,16 +9,60 @@
 import UIKit
 
 class MojiViewController: UIViewController {
-    
     var selectedControl: SelectedControl = .feed {
         didSet {
             layoutControl()
         }
     }
-
+    private var feedViewController: FeedViewController!
+    private var globalViewController: GlobalViewController!
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutControl()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        globalViewController = storyboard.instantiateViewController(withIdentifier: "global") as? GlobalViewController
+        feedViewController = storyboard.instantiateViewController(withIdentifier: "feed") as? FeedViewController
+        
+        
+        addChild(feedViewController)
+        view.addSubviewForAutoLayout(feedViewController.view)
+        feedViewController.view.isHidden = true
+        feedViewController.view.constrainToFill(view)
+        
+        addChild(globalViewController)
+        view.addSubviewForAutoLayout(globalViewController.view)
+        globalViewController.view.constrainToFill(view)
+        globalViewController.view.isHidden = true
+        
+        setSelectedControlView(to: .feed)
+    }
+    
+    func setSelectedControlView(to control: SelectedControl) {
+        switch selectedControl {
+        case .feed:
+            UIView.animate(withDuration: 0.5) {
+                self.globalViewController.view.isHidden = true
+                self.feedViewController.view.isHidden = false
+            }
+        case .global:
+            UIView.animate(withDuration: 0.5) {
+                self.globalViewController.view.isHidden = false
+                self.feedViewController.view.isHidden = true
+            }
+        default: break
+        }
+        selectedControl = control
     }
     
     private func layoutControl() {
@@ -41,21 +85,10 @@ class MojiViewController: UIViewController {
 extension MojiViewController: MojiControlProtocol {
     func controlSelected(_ control: SelectedControl) {
         guard control != selectedControl else { return }
-        selectedControl = control
-        switch control {
-        case .feed:
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let feedViewController = storyboard.instantiateViewController(withIdentifier: "feed") as! FeedViewController
-            self.navigationController?.pushViewController(feedViewController, animated: true)
-        case .add:
+        if case .add = control {
             self.navigationController?.pushViewController(BitmojiSelectorViewController(), animated: true)
-        case .global:
-            break
-            /*
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let globalViewController = storyboard.instantiateViewController(withIdentifier: "global") as! GlobalViewController
-            present(globalViewController, animated: true)
- */
+        } else {
+            setSelectedControlView(to: control)
         }
     }
 }
