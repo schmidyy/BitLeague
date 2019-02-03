@@ -119,6 +119,7 @@ class CreatorViewController: UIViewController {
                 }
                 
                 let postId = UUID().uuidString
+                
                 db.collection("posts").document(postId).setData([
                     "bitmoji": [
                         "image": self.bitmojiURL,
@@ -133,7 +134,6 @@ class CreatorViewController: UIViewController {
                         "id": userID
                     ]
                 ])
-                //self.dismiss(animated: true, completion: nil)
             }
         }
     }
