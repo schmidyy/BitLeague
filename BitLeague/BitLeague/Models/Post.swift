@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct Bitmoji {
+struct Bitmoji: Hashable {
     let image: String
     let recreations: Int
 }
 
-struct Post {
+struct Post: Hashable {
     let id: String
     let image: String
     let user: User

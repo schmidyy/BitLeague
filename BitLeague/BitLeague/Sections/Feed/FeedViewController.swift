@@ -28,11 +28,17 @@ class FeedViewController: UIViewController {
         fetchPosts()
     }
     
+    private func update(to posts: [Post]) {
+        let oldStates = self.posts
+        self.posts = posts
+        let changes = diff(old: oldStates, new: posts)
+        feedTableView.reload(changes: changes)
+    }
+    
     private func fetchPosts() {
         FireClient.shared.posts(sortingKey: .date) { posts in
             guard let posts = posts else { return }
-            self.posts = posts
-            self.feedTableView.reloadData()
+            self.update(to: posts)
         }
     }
     

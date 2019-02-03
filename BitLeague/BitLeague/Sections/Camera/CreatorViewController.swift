@@ -93,7 +93,7 @@ class CreatorViewController: UIViewController {
     }
     
     @objc func postAction() {
-        guard let cropped = croppedImage(), let data = cropped.pngData() else { return }
+        guard let cropped = croppedImage(), let data = cropped.jpegData(compressionQuality: 0.9) else { return }
         
         guard let user = Device.user(),
             let userID = user.externalId,

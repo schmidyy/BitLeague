@@ -26,9 +26,15 @@ class GlobalViewController: UIViewController {
     private func fetchPosts() {
         FireClient.shared.posts(sortingKey: .claps) { posts in
             guard let posts = posts else { return }
-            self.posts = posts
-            self.feedTableView.reloadData()
+            self.update(to: posts)
         }
+    }
+    
+    private func update(to posts: [Post]) {
+        let oldStates = self.posts
+        self.posts = posts
+        let changes = diff(old: oldStates, new: posts)
+        feedTableView.reload(changes: changes)
     }
 }
 
