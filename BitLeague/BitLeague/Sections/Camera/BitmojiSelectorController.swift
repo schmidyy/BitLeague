@@ -13,6 +13,9 @@ import Hero
 class BitmojiSelectorViewController: UIViewController, SCSDKBitmojiStickerPickerViewControllerDelegate {
     init() {
         super.init(nibName: nil, bundle: nil)
+        hero.isEnabled = true
+        hero.modalAnimationType = .slide(direction: .right)
+        
         view.backgroundColor = UIColor.white
         let stickerPickerVC = SCSDKBitmojiStickerPickerViewController()
         stickerPickerVC.delegate = self
@@ -33,6 +36,6 @@ class BitmojiSelectorViewController: UIViewController, SCSDKBitmojiStickerPicker
     }
     
     func bitmojiStickerPickerViewController(_ stickerPickerViewController: SCSDKBitmojiStickerPickerViewController, didSelectBitmojiWithURL bitmojiURL: String, image: UIImage?) {
-        present(CameraViewController(bitmojiURL: bitmojiURL), animated: true)
+        navigationController?.pushViewController(CameraViewController(bitmojiURL: bitmojiURL), animated: true)
     }
 }

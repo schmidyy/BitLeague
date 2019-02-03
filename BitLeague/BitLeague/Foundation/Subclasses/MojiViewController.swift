@@ -46,13 +46,16 @@ extension MojiViewController: MojiControlProtocol {
         case .feed:
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let feedViewController = storyboard.instantiateViewController(withIdentifier: "feed") as! FeedViewController
-            present(feedViewController, animated: true)
+            self.navigationController?.pushViewController(feedViewController, animated: true)
         case .add:
-            present(BitmojiSelectorViewController(), animated: true)
+            self.navigationController?.pushViewController(BitmojiSelectorViewController(), animated: true)
         case .global:
+            break
+            /*
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let globalViewController = storyboard.instantiateViewController(withIdentifier: "global") as! GlobalViewController
             present(globalViewController, animated: true)
+ */
         }
     }
 }

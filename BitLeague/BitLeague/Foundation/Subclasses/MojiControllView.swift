@@ -32,6 +32,8 @@ class MojiControllView: UIView {
     }
     
     func setupUI() {
+        hero.isEnabled = true
+        
         clipsToBounds = false
         wideView.layer.cornerRadius = 20
         addView.layer.cornerRadius = addView.frame.height / 2

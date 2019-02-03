@@ -48,7 +48,10 @@ class LoginViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let feedViewController = storyboard.instantiateViewController(withIdentifier: "feed") as! FeedViewController
         feedViewController.user = user
-        present(feedViewController, animated: true)
+        
+        let navigation = UINavigationController(rootViewController: feedViewController)
+        navigation.isNavigationBarHidden = true
+        present(navigation, animated: true)
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {

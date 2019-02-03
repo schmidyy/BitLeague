@@ -89,7 +89,7 @@ class CreatorViewController: UIViewController {
     }
     
     @objc func retryAction() {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc func postAction() {
@@ -134,6 +134,7 @@ class CreatorViewController: UIViewController {
                         "id": userID
                     ]
                 ])
+                self.navigationController?.popToRootViewController(animated: true)
             }
         }
     }

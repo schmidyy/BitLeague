@@ -28,6 +28,8 @@ class CameraViewController: UIViewController {
     init(bitmojiURL: String) {
         self.bitmojiURL = bitmojiURL
         super.init(nibName: nil, bundle: nil)
+        view.backgroundColor = UIColor.white
+        setupCamera()
         hero.isEnabled = true
         
         captureButton.tapSelector = captureAction
@@ -52,7 +54,6 @@ class CameraViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCamera()
         fetchBitmoji()
     }
     
@@ -69,7 +70,7 @@ class CameraViewController: UIViewController {
     
     // MARK: - View Setup
     func addBitmojiPreview() {
-        bitmojiPreviewContainer.hero.modifiers = [.scale(0.5)]
+        bitmojiPreviewContainer.hero.modifiers = [.whenAppearing(.scale(0.5))]
         bitmojiPreviewContainer.layer.cornerRadius = 8
         bitmojiPreviewContainer.clipsToBounds = true
         bitmojiPreviewContainer.backgroundColor = UIColor.white
@@ -166,7 +167,7 @@ class CameraViewController: UIViewController {
     }
     
     @objc func returnToSelector() {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -185,6 +186,6 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         
         let creator = CreatorViewController(bitmojiURL: bitmojiURL)
         creator.reactionImage.image = image
-        present(creator, animated: true, completion: nil)
+        navigationController?.pushViewController(creator, animated: true)
     }
 }
